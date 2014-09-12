@@ -19,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-1123" y="21"/>
         </scene>
-        <!--Main View Controller - 元气魔镜-->
+        <!--Main View Controller-->
         <scene sceneID="nHs-0f-uT8">
             <objects>
                 <viewController storyboardIdentifier="main" id="yEB-Bt-xGa" customClass="mainViewController" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="元气魔镜" id="Obg-R8-Il6" colorLabel="IBBuiltInLabel-Yellow"/>
+                    <navigationItem key="navigationItem" id="Obg-R8-Il6" colorLabel="IBBuiltInLabel-Yellow"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRb-1a-Mw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
