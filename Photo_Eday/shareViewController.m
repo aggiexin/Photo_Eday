@@ -63,12 +63,7 @@
     UIView *shareActions = [[UIView alloc]initWithFrame:CGRectMake(0, 140, 320, PageH-110)];
 //    shareActions.backgroundColor  = [UIColor grayColor];
     [self.view addSubview:shareActions];
-    
-//    UIButton *qqSpace = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [qqSpace setImage:[UIImage imageNamed:@"qqSpace.png"] forState:UIControlStateNormal];
-//    [qqSpace addTarget:self action:@selector(goQQspace) forControlEvents:UIControlEventTouchUpInside];
-//    qqSpace.frame = CGRectMake(20, 0, 55, 75);
-//    [shareActions addSubview:qqSpace];
+
     
     UIButton *qq = [UIButton buttonWithType:UIButtonTypeCustom];
     [qq setImage:[UIImage imageNamed:@"QQ-2.png"] forState:UIControlStateNormal];
