@@ -467,7 +467,7 @@
     [btn1 addTarget:self action:@selector(shareandsave) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn1];
 //    self.navigationController.navigationItem.leftBarButtonItem.title = @"返回";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(backback)];
+
 
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 //

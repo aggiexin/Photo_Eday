@@ -59,7 +59,8 @@
 //    UIImageView *savedLabel = [[UIImageView alloc]initWithFrame:CGRectMake(PageW/2-60, 99, 116, 20)];
 //    savedLabel.image = [UIImage imageNamed:@"saved.png"];
 //    [self.view addSubview:savedLabel];
-//    
+   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStyleBordered target:self action:@selector(backCamera)];
+    
     UIView *shareActions = [[UIView alloc]initWithFrame:CGRectMake(0, 140, 320, PageH-110)];
 //    shareActions.backgroundColor  = [UIColor grayColor];
     [self.view addSubview:shareActions];
