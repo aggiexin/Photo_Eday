@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DestributionSentence" representedClassName="DestributionSentence" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="glass" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="sentence" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smile" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="DestributionTitle" representedClassName="DestributionTitle" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="glass" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="smile" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ImgHistory" representedClassName="ImgHistory" syncable="YES">
+        <attribute name="creatTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imgLocalPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sentence" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DestributionSentence" positionX="261" positionY="27" width="128" height="105"/>
+        <element name="DestributionTitle" positionX="252" positionY="18" width="128" height="118"/>
+        <element name="ImgHistory" positionX="241" positionY="-36" width="128" height="120"/>
+    </elements>
+</model>
