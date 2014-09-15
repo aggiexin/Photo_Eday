@@ -47,6 +47,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)backback{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(void)setUI{
     
 
@@ -58,6 +61,14 @@
     [delete setImage:[UIImage imageNamed:@"delete.png"] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:delete];
     
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.frame = CGRectMake(-10, -3, 46, 19) ;
+    UIImage* image = [UIImage imageNamed:@"back.png"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [btn setImage:image forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(backback) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
 //    UIButton *goback = [UIButton buttonWithType:UIButtonTypeCustom];
