@@ -59,11 +59,14 @@
 
 - (void)viewDidLoad
 {
-    [Internet ChickInternet];
     [super viewDidLoad];
     [self setUI];
 
     // Do any additional setup after loading the view.
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [Internet ChickInternet];
+
 }
 - (void)dealloc {
     _umFeedback.delegate = nil;
