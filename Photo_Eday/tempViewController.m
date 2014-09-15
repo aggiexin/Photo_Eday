@@ -455,30 +455,35 @@
      
      }
 
+-(void)bakmain{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(void)setUI{
     //UP
-    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn1.frame = CGRectMake(0, 0, 66, 18) ;
-    UIImage* image = [UIImage imageNamed:@"saveandshare.png"];
-    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];//保持原有形态
-    [btn1 setImage:image forState:UIControlStateNormal];
-//    [btn1 setTitle:@"保存与分享" forState:UIControlStateNormal];
-    [btn1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btn1 addTarget:self action:@selector(shareandsave) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn1];
+//    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+//    btn1.frame = CGRectMake(0, 0, 66, 18) ;
+//    UIImage* image = [UIImage imageNamed:@"saveandshare.png"];
+//    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];//保持原有形态
+//    [btn1 setImage:image forState:UIControlStateNormal];
+////    [btn1 setTitle:@"保存与分享" forState:UIControlStateNormal];
+//    [btn1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [btn1 addTarget:self action:@selector(shareandsave) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn1];
 //    self.navigationController.navigationItem.leftBarButtonItem.title = @"返回";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"保存  " style:UIBarButtonItemStyleBordered target:self action:@selector(shareandsave)];
 
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(bakmain)];
 
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 //
-//    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    btn2.frame = CGRectMake(0, 0, 40, 18) ;
-//    UIImage* image2 = [UIImage imageNamed:@"back.png"];
-//    image2 = [image2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    [btn2 setImage:image2 forState:UIControlStateNormal];
-//    [btn2 addTarget:self action:@selector(backback) forControlEvents:UIControlEventTouchUpInside];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn2];
-//
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.frame = CGRectMake(-10, -3, 46, 19) ;
+    UIImage* image = [UIImage imageNamed:@"back.png"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [btn setImage:image forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(backback) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+
     
   //DOWN
     _buttomBackGround = [[UIImageView alloc]initWithFrame:CGRectMake(0, PageH-64, PageW, 64)];

@@ -213,19 +213,30 @@ static UITapGestureRecognizer *tapRecognizer;
 }
 
 - (void)setBackButton {
-    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-
-    [backBtn addTarget:self action:@selector(backToPrevious) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
-    self.navigationItem.leftBarButtonItem = backButtonItem;
-
-    backBtn.titleLabel.font = [UIFont systemFontOfSize:15.0];
-    [backBtn setTitle:NSLocalizedString(@"返回", @"关闭") forState:UIControlStateNormal];
-
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"nav_btn_bg"] forState:UIControlStateNormal];
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"nav_btn_bg_lighted"] forState:UIControlStateHighlighted];
-    backBtn.frame = CGRectMake(0, 0, 51.0f, self.navigationController.navigationBar.frame.size.height * 0.7);
-    backBtn.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+//    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//
+//    [backBtn addTarget:self action:@selector(backToPrevious) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+//    self.navigationItem.leftBarButtonItem = backButtonItem;
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(backToPrevious)];
+//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.frame = CGRectMake(-10, -3, 46, 19) ;
+    UIImage* image = [UIImage imageNamed:@"back.png"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [btn setImage:image forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(backToPrevious) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+//
+//    
+//
+//    backBtn.titleLabel.font = [UIFont systemFontOfSize:15.0];
+//    [backBtn setTitle:NSLocalizedString(@"返回", @"关闭") forState:UIControlStateNormal];
+//
+//    [backBtn setBackgroundImage:[UIImage imageNamed:@"nav_btn_bg"] forState:UIControlStateNormal];
+//    [backBtn setBackgroundImage:[UIImage imageNamed:@"nav_btn_bg_lighted"] forState:UIControlStateHighlighted];
+//    backBtn.frame = CGRectMake(-20, 10, 51.0f, self.navigationController.navigationBar.frame.size.height * 0.7);
+//    backBtn.autoresizingMask = UIViewAutoresizingFlexibleHeight;
 }
 
 - (void)didTapAnywhere:(UITapGestureRecognizer *)recognizer {

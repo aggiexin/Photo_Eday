@@ -60,14 +60,14 @@
 - (void)viewDidLoad
 {
     [Internet ChickInternet];
-    UMFeedback *umFeedbacks = [UMFeedback sharedInstance];
-    [umFeedbacks setAppkey:@"5408147ffd98c5cd1d00c9df" delegate:self];
     [super viewDidLoad];
     [self setUI];
 
     // Do any additional setup after loading the view.
 }
-
+- (void)dealloc {
+    _umFeedback.delegate = nil;
+}
 -(void)reloadData{
     _creatTimes = [NSMutableArray new];
     
@@ -234,12 +234,14 @@
     UIButton *btnsuggest = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btnsuggest.frame = CGRectMake(0, 0, 40, 18) ;
     [btnsuggest addTarget:self action:@selector(suggest) forControlEvents:UIControlEventTouchUpInside];
-    [btnsuggest setTitle:@"反馈" forState:UIControlStateNormal];
+    [btnsuggest setTitle:@"反馈  " forState:UIControlStateNormal];
 //    btn2.titleLabel.textColor = [UIColor whiteColor];
     [btnsuggest setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 
     [btnsuggest setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btnsuggest];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btnsuggest];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"反馈" style:UIBarButtonItemStyleBordered target:self action:@selector(suggest)];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"greenback.png"] forBarMetrics:UIBarMetricsDefault];
     CGRect labelframe = CGRectMake(0, 0, 60, 70);
@@ -424,6 +426,8 @@
 }
 
 -(void)suggest{
+    UMFeedback *umFeedbacks = [UMFeedback sharedInstance];
+    [umFeedbacks setAppkey:@"5408147ffd98c5cd1d00c9df" delegate:self];
     [self showNativeFeedbackWithAppkey:@"5408147ffd98c5cd1d00c9df"];
     
 //    [UMFeedback showFeedback:self withAppkey:@"5408147ffd98c5cd1d00c9df"];
@@ -437,7 +441,6 @@
     navigationController.navigationBar.translucent = NO;
     //    [self presentModalViewController:navigationController animated:YES];
     [self presentViewController:navigationController animated:YES completion:nil];
-//    [self.navigationController pushViewController:feedbackViewController animated:YES];
 }
 /*
 #pragma mark - Navigation
