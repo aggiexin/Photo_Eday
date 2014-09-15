@@ -65,9 +65,20 @@
     // Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated{
-    [Internet ChickInternet];
-
+    
+//    if ([Internet ChickInternet]==0) {
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"关闭飞行模式或者使用无线局域网来来进行人脸识别" message:nil delegate:self cancelButtonTitle:@"好" otherButtonTitles:@"设置",nil];
+//        [alertView  show];
+//    }
 }
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+        if (buttonIndex==0) {
+//            NSURL*url=[NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"];
+//            [[UIApplication sharedApplication] openURL:url];
+        }
+}
+
 - (void)dealloc {
     _umFeedback.delegate = nil;
 }

@@ -22,7 +22,6 @@
 		450DDD671982602F00BF57F1 /* QQ-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 450DDD601982602F00BF57F1 /* QQ-2.png */; };
 		450DDD691982629C00BF57F1 /* qqSpace.png in Resources */ = {isa = PBXBuildFile; fileRef = 450DDD681982629C00BF57F1 /* qqSpace.png */; };
 		450DDD6E198370FC00BF57F1 /* templateBK.png in Resources */ = {isa = PBXBuildFile; fileRef = 450DDD6D198370FC00BF57F1 /* templateBK.png */; };
-		450DDD701983739200BF57F1 /* templateSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 450DDD6F1983739200BF57F1 /* templateSmall.png */; };
 		450DDD731985ED1500BF57F1 /* InitData.m in Sources */ = {isa = PBXBuildFile; fileRef = 450DDD721985ED1500BF57F1 /* InitData.m */; };
 		451489F31987921B00B0568D /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451489F21987921B00B0568D /* TencentOpenAPI.framework */; };
 		451489F51987949400B0568D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 451489F41987949400B0568D /* libiconv.dylib */; };
@@ -306,13 +305,12 @@
 		450DDD601982602F00BF57F1 /* QQ-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "QQ-2.png"; path = "../QQ-2.png"; sourceTree = "<group>"; };
 		450DDD681982629C00BF57F1 /* qqSpace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qqSpace.png; path = ../qqSpace.png; sourceTree = "<group>"; };
 		450DDD6D198370FC00BF57F1 /* templateBK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = templateBK.png; path = ../templateBK.png; sourceTree = "<group>"; };
-		450DDD6F1983739200BF57F1 /* templateSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = templateSmall.png; path = ../templateSmall.png; sourceTree = "<group>"; };
 		450DDD711985ED1500BF57F1 /* InitData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitData.h; sourceTree = "<group>"; };
 		450DDD721985ED1500BF57F1 /* InitData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitData.m; sourceTree = "<group>"; };
 		451489F21987921B00B0568D /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		451489F41987949400B0568D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		451489F6198794CA00B0568D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		451AF78E19C6B2B400FB571B /* turnback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turnback.png; sourceTree = "<group>"; };
+		451AF78E19C6B2B400FB571B /* turnback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = turnback.png; path = ../turnback.png; sourceTree = "<group>"; };
 		452B2D5619ACC1AD00157486 /* mainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewController.m; sourceTree = "<group>"; };
 		452B2D5A19AD87A000157486 /* sharemain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sharemain.png; sourceTree = "<group>"; };
 		45315FB9197E3CDD00FD148F /* 元气魔镜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "元气魔镜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -569,8 +567,8 @@
 		4598C56B19AF34FF00546F2B /* ImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTool.m; sourceTree = "<group>"; };
 		4598C56F19B05EF500546F2B /* LocationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTool.h; sourceTree = "<group>"; };
 		4598C57019B05EF500546F2B /* LocationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTool.m; sourceTree = "<group>"; };
-		4598C57319B077D600546F2B /* city.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = city.txt; sourceTree = "<group>"; };
-		4598C58719B4604900546F2B /* TencentOAuth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TencentOAuth.h; path = ShareSDK/Extend/QQConnectSDK/TencentOpenAPI.framework/Headers/TencentOAuth.h; sourceTree = "<group>"; };
+		4598C57319B077D600546F2B /* city.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = city.txt; path = ../city.txt; sourceTree = "<group>"; };
+		4598C58719B4604900546F2B /* TencentOAuth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TencentOAuth.h; path = TencentOpenAPI.framework/Headers/TencentOAuth.h; sourceTree = "<group>"; };
 		4598C58B19B59DFB00546F2B /* rain1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain1.png; sourceTree = "<group>"; };
 		4598C58C19B59DFB00546F2B /* rain2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain2.png; sourceTree = "<group>"; };
 		4598C58D19B59DFB00546F2B /* rain3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain3.png; sourceTree = "<group>"; };
@@ -718,9 +716,7 @@
 		45315FB0197E3CDD00FD148F = {
 			isa = PBXGroup;
 			children = (
-				451AF78E19C6B2B400FB571B /* turnback.png */,
 				45315FCE197E3CDD00FD148F /* Main.storyboard */,
-				4598C57319B077D600546F2B /* city.txt */,
 				455A9A031982121C00F8B040 /* Photo */,
 				455A99B7197FAE0000F8B040 /* CoreDataList */,
 				4531605F197E4A8B00FD148F /* Vendor */,
@@ -744,7 +740,6 @@
 		45315FBB197E3CDD00FD148F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4598C58719B4604900546F2B /* TencentOAuth.h */,
 				4598C55719ADD6FE00546F2B /* AssetsLibrary.framework */,
 				4598C55519ADD6EC00546F2B /* AddressBook.framework */,
 				4598C55319ADD67D00546F2B /* CoreLocation.framework */,
@@ -796,9 +791,9 @@
 		45315FC3197E3CDD00FD148F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4598C57319B077D600546F2B /* city.txt */,
 				4534B4B819A7B811009974A9 /* eday_photo.sqlite */,
 				4534B4AC19A77F20009974A9 /* Model.xcdatamodeld */,
-				450DDD6F1983739200BF57F1 /* templateSmall.png */,
 				45315FC4197E3CDD00FD148F /* Photo_Eday-Info.plist */,
 				45315FC5197E3CDD00FD148F /* InfoPlist.strings */,
 				45315FC8197E3CDD00FD148F /* main.m */,
@@ -1034,6 +1029,7 @@
 				4598C5E719B70C9100546F2B /* start568.png */,
 				4598C5E519B7099300546F2B /* issave.png */,
 				4598C5DF19B6FDF700546F2B /* start.png */,
+				451AF78E19C6B2B400FB571B /* turnback.png */,
 				4598C5D219B6FBB300546F2B /* logo */,
 				4534B51619A84A35009974A9 /* person */,
 				45CD1FB419A5CBB00040E25E /* TemPlate */,
@@ -1158,6 +1154,7 @@
 		4598C4DE19ADC9BD00546F2B /* QQConnectSDK */ = {
 			isa = PBXGroup;
 			children = (
+				4598C58719B4604900546F2B /* TencentOAuth.h */,
 				4598C56219AED4D600546F2B /* TencentOpenApi_IOS_Bundle.bundle */,
 				4598C4DF19ADC9BD00546F2B /* TencentOpenAPI.framework */,
 				4598C4E019ADC9BD00546F2B /* TencentOpenApi_IOS_Bundle.bundle */,
@@ -1419,7 +1416,6 @@
 				457C596B19C1FA6000761C1E /* graybuttonBK.png in Resources */,
 				450DDD5419824EBC00BF57F1 /* saveandshare.png in Resources */,
 				450DDD661982602F00BF57F1 /* Instagram-2.png in Resources */,
-				450DDD701983739200BF57F1 /* templateSmall.png in Resources */,
 				457C595F19C1A13C00761C1E /* UMFeedbackViewController.xib in Resources */,
 				4598C59219B59DFB00546F2B /* rain4.png in Resources */,
 				4534B4D519A846C8009974A9 /* gender2age2smile3glass2.png in Resources */,
