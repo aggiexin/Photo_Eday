@@ -54,22 +54,24 @@
     
 
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"greenback.png"] forBarMetrics:UIBarMetricsDefault];
-    
-    UIButton *delete = [UIButton buttonWithType:UIButtonTypeCustom];
-    delete.frame = CGRectMake(10, 0, 24.5, 28) ;
-    [delete addTarget:self action:@selector(deletePhtot) forControlEvents:UIControlEventTouchUpInside];
-    [delete setImage:[UIImage imageNamed:@"delete.png"] forState:UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:delete];
+//    UIButton *delete = [UIButton buttonWithType:UIButtonTypeCustom];
+//    delete.frame = CGRectMake(10, 0, 24.5, 28) ;
+//    [delete addTarget:self action:@selector(deletePhtot) forControlEvents:UIControlEventTouchUpInside];
+//    [delete setImage:[UIImage imageNamed:@"delete.png"] forState:UIControlStateNormal];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:delete];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deletePhtot)];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btn.frame = CGRectMake(-10, -3, 46, 19) ;
-    UIImage* image = [UIImage imageNamed:@"back.png"];
+    btn.frame = CGRectMake(0, 0, 35, 35) ;
+    UIImage* image = [UIImage imageNamed:@"turnback.png"];
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [btn setImage:image forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backback) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
 
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(backback)];
 
 //    UIButton *goback = [UIButton buttonWithType:UIButtonTypeCustom];
 //    goback.frame = CGRectMake(0, 0, 40, 18) ;

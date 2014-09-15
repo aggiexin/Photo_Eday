@@ -19,11 +19,13 @@
             // 没有网络连接
             break;
         case ReachableViaWWAN:
-            [SVProgressHUD showSuccessWithStatus:@"当前3G网络正常"];
+//            [SVProgressHUD showSuccessWithStatus:@"当前3G网络正常"];
+            [SVProgressHUD dismiss];
             // 使用3G网络
             break;
         case ReachableViaWiFi:
-            [SVProgressHUD showSuccessWithStatus:@"当前wifi网络正常"];
+//            [SVProgressHUD showSuccessWithStatus:@"当前wifi网络正常"];
+            [SVProgressHUD dismiss];
             // 使用WiFi网络
             break;
     }

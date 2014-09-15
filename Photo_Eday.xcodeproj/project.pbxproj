@@ -27,6 +27,7 @@
 		451489F31987921B00B0568D /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451489F21987921B00B0568D /* TencentOpenAPI.framework */; };
 		451489F51987949400B0568D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 451489F41987949400B0568D /* libiconv.dylib */; };
 		451489F7198794CA00B0568D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 451489F6198794CA00B0568D /* libz.dylib */; };
+		451AF78F19C6B2B400FB571B /* turnback.png in Resources */ = {isa = PBXBuildFile; fileRef = 451AF78E19C6B2B400FB571B /* turnback.png */; };
 		452B2D5719ACC1AD00157486 /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452B2D5619ACC1AD00157486 /* mainViewController.m */; };
 		452B2D5B19AD87A000157486 /* sharemain.png in Resources */ = {isa = PBXBuildFile; fileRef = 452B2D5A19AD87A000157486 /* sharemain.png */; };
 		45315FBD197E3CDD00FD148F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45315FBC197E3CDD00FD148F /* Foundation.framework */; };
@@ -311,6 +312,7 @@
 		451489F21987921B00B0568D /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		451489F41987949400B0568D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		451489F6198794CA00B0568D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		451AF78E19C6B2B400FB571B /* turnback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turnback.png; sourceTree = "<group>"; };
 		452B2D5619ACC1AD00157486 /* mainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewController.m; sourceTree = "<group>"; };
 		452B2D5A19AD87A000157486 /* sharemain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sharemain.png; sourceTree = "<group>"; };
 		45315FB9197E3CDD00FD148F /* 元气魔镜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "元气魔镜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -716,6 +718,7 @@
 		45315FB0197E3CDD00FD148F = {
 			isa = PBXGroup;
 			children = (
+				451AF78E19C6B2B400FB571B /* turnback.png */,
 				45315FCE197E3CDD00FD148F /* Main.storyboard */,
 				4598C57319B077D600546F2B /* city.txt */,
 				455A9A031982121C00F8B040 /* Photo */,
@@ -1486,6 +1489,7 @@
 				45CD1FDE19A5CBEA0040E25E /* 8-3.阴天.png in Resources */,
 				45CD1FCB19A5CBEA0040E25E /* 1.心.png in Resources */,
 				4598C5A419B59E7D00546F2B /* snow4.png in Resources */,
+				451AF78F19C6B2B400FB571B /* turnback.png in Resources */,
 				4598C52519ADC9BD00546F2B /* Resource.bundle in Resources */,
 				4598C5E019B6FDF700546F2B /* start.png in Resources */,
 				4534B50719A8499F009974A9 /* gender1age3smile2glass2.png in Resources */,

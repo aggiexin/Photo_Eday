@@ -60,16 +60,18 @@
 //    savedLabel.image = [UIImage imageNamed:@"saved.png"];
 //    [self.view addSubview:savedLabel];
 //   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(backCamera)];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btn.frame = CGRectMake(-10, -3, 46, 19) ;
-    UIImage* image = [UIImage imageNamed:@"back.png"];
-    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [btn setImage:image forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(backCamera) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
-
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    btn.frame = CGRectMake(-10, -3, 46, 19) ;
+//    UIImage* image = [UIImage imageNamed:@"back.png"];
+//    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    [btn setImage:image forState:UIControlStateNormal];
+//    [btn addTarget:self action:@selector(backCamera) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(backCamera)];
+//    [self.navigationItem.leftBarButtonItem  = [UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonItemStyleBordered target:self action:@selector(backCamera)];
 //       self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStyleDone target:self action:@selector(backCamera)];
     
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(backCamera)];
     
 //    [self.navigationItem.leftBarButtonItem setAction:@selector(backCamera)];
     

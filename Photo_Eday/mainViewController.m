@@ -240,6 +240,10 @@
 
     [btnsuggest setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btnsuggest];
+
+    
+    
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"反馈" style:UIBarButtonItemStyleBordered target:self action:@selector(suggest)];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
@@ -285,7 +289,7 @@
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerat{
-    if (scrollerviewY <scrollView.contentOffset.y) {
+    if (scrollerviewY > scrollView.contentOffset.y) {
 //        [self reloadData];
 //        [_maintable reloadData];
         [UIView animateWithDuration:0.6 animations:^{
