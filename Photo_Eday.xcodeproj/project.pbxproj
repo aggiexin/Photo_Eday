@@ -127,7 +127,6 @@
 		4534B60819AC6A91009974A9 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B60119AC6A91009974A9 /* 8.png */; };
 		4534B60B19AC6BAC009974A9 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B60919AC6BAC009974A9 /* delete.png */; };
 		4534B60C19AC6BAC009974A9 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B60A19AC6BAC009974A9 /* share.png */; };
-		455A97B1197E5C8300F8B040 /* CoreDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 455A97B0197E5C8300F8B040 /* CoreDataTool.m */; };
 		455A99A1197F93C500F8B040 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 455A99A0197F93C500F8B040 /* SystemConfiguration.framework */; };
 		455A99A3197F93CC00F8B040 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 455A99A2197F93CC00F8B040 /* QuartzCore.framework */; };
 		455A99A5197F93D400F8B040 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 455A99A4197F93D400F8B040 /* CoreTelephony.framework */; };
@@ -156,6 +155,7 @@
 		457C596819C1F37400761C1E /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 457C596519C1F37400761C1E /* libUMFeedback.a */; };
 		457C596919C1F37400761C1E /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 457C596619C1F37400761C1E /* umFeedback.bundle */; };
 		457C596B19C1FA6000761C1E /* graybuttonBK.png in Resources */ = {isa = PBXBuildFile; fileRef = 457C596A19C1FA6000761C1E /* graybuttonBK.png */; };
+		4594007519C85983003ABA61 /* CoreDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4594007419C85983003ABA61 /* CoreDataTool.m */; };
 		4598C50119ADC9BD00546F2B /* CopyConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4598C4AC19ADC9BD00546F2B /* CopyConnection.framework */; };
 		4598C50219ADC9BD00546F2B /* DouBanConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4598C4AD19ADC9BD00546F2B /* DouBanConnection.framework */; };
 		4598C50319ADC9BD00546F2B /* DropboxConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4598C4AE19ADC9BD00546F2B /* DropboxConnection.framework */; };
@@ -448,8 +448,6 @@
 		4534B60119AC6A91009974A9 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		4534B60919AC6BAC009974A9 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		4534B60A19AC6BAC009974A9 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
-		455A97AF197E5C8300F8B040 /* CoreDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTool.h; sourceTree = "<group>"; };
-		455A97B0197E5C8300F8B040 /* CoreDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTool.m; sourceTree = "<group>"; };
 		455A99A0197F93C500F8B040 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		455A99A2197F93CC00F8B040 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		455A99A4197F93D400F8B040 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -489,6 +487,8 @@
 		457C596619C1F37400761C1E /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = umFeedback.bundle; sourceTree = "<group>"; };
 		457C596719C1F37400761C1E /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedback.h; sourceTree = "<group>"; };
 		457C596A19C1FA6000761C1E /* graybuttonBK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graybuttonBK.png; sourceTree = "<group>"; };
+		4594007319C85983003ABA61 /* CoreDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTool.h; sourceTree = "<group>"; };
+		4594007419C85983003ABA61 /* CoreDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTool.m; sourceTree = "<group>"; };
 		4598C4AC19ADC9BD00546F2B /* CopyConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CopyConnection.framework; sourceTree = "<group>"; };
 		4598C4AD19ADC9BD00546F2B /* DouBanConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DouBanConnection.framework; sourceTree = "<group>"; };
 		4598C4AE19ADC9BD00546F2B /* DropboxConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxConnection.framework; sourceTree = "<group>"; };
@@ -823,10 +823,10 @@
 		45315FF4197E3D8800FD148F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4594007319C85983003ABA61 /* CoreDataTool.h */,
+				4594007419C85983003ABA61 /* CoreDataTool.m */,
 				45316060197E558900FD148F /* FaceTool.h */,
 				45316061197E558900FD148F /* FaceTool.m */,
-				455A97AF197E5C8300F8B040 /* CoreDataTool.h */,
-				455A97B0197E5C8300F8B040 /* CoreDataTool.m */,
 				455A99F11980DF1200F8B040 /* TimeTool.h */,
 				455A99F21980DF1200F8B040 /* TimeTool.m */,
 				450DDD711985ED1500BF57F1 /* InitData.h */,
@@ -1595,7 +1595,6 @@
 				4531603C197E3DA200FD148F /* CJSONDeserializer.m in Sources */,
 				45316039197E3DA200FD148F /* CJSONSerializedData.m in Sources */,
 				457C596319C1A13C00761C1E /* UMContactViewController.m in Sources */,
-				455A97B1197E5C8300F8B040 /* CoreDataTool.m in Sources */,
 				4531603A197E3DA200FD148F /* CDataScanner_Extensions.m in Sources */,
 				4598C56C19AF34FF00546F2B /* ImageTool.m in Sources */,
 				4531603D197E3DA200FD148F /* CJSONScanner.m in Sources */,
@@ -1620,6 +1619,7 @@
 				45316031197E3DA200FD148F /* FaceppRecognition.m in Sources */,
 				4531603E197E3DA200FD148F /* CJSONSerializer.m in Sources */,
 				455A9A011981FF2000F8B040 /* DetailTableViewCell.m in Sources */,
+				4594007519C85983003ABA61 /* CoreDataTool.m in Sources */,
 				45316035197E3DA200FD148F /* CDataScanner.m in Sources */,
 				4534B4B419A77F5B009974A9 /* DestributionSentence.m in Sources */,
 				45316030197E3DA200FD148F /* FaceppPerson.m in Sources */,

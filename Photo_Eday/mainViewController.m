@@ -86,14 +86,33 @@
     _creatTimes = [NSMutableArray new];
     
     _creatTimeData = [CoreDataTool getCreateTimes];
+    _beforepath = [NSMutableArray new];
+    _afterpath = [NSMutableArray new];
+    for (int i=0; i<[_creatTimeData count]; i++) {
+        NSString *pathAfter = [CoreDataTool getImageAfterPathByCreatetime:[_creatTimeData objectAtIndex:i]];
+        NSData* fileafterData = [NSData dataWithContentsOfFile:pathAfter];
+        UIImage * imageAfter = [UIImage imageWithData:fileafterData];
+        if (imageAfter) {
+            [_afterpath addObject:imageAfter];
+        }else{
+            [_afterpath addObject:@" "];
+        }
+        
+        
+        NSString *pathbefore = [CoreDataTool getImageBeforePathByCreatetime:[_creatTimeData objectAtIndex:i]];
+        NSData* filebeforeData = [NSData dataWithContentsOfFile:pathbefore];
+        UIImage * imagebefroe = [UIImage imageWithData:filebeforeData];
+        if (imagebefroe) {
+            [_beforepath addObject:imagebefroe];
+        }else{
+            [_beforepath addObject:@" "];
+        }
+    }
     for ( int i=0; i<[_creatTimeData count]; i++) {
         NSDate *timelist = [TimeTool stringFromDate:[_creatTimeData objectAtIndex:i]];
         NSString *timelistString = [TimeTool GetTime:timelist];
         [_creatTimes addObject:timelistString];
     }
-
-    
-
     
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -120,34 +139,40 @@
         cell.photoChange.frame= CGRectMake(14, 22, 52, 52);
         cell.photoOriginal.frame = CGRectMake(74, 22, 52, 52);
         cell.timeLabel.frame = CGRectMake(195, 22, 105, 52);
-
+        
     }
     
     cell.backgroundColor = [UIColor clearColor];
-    NSString *pathbefore = [CoreDataTool getImageBeforePathByCreatetime:[_creatTimeData objectAtIndex:indexPath.row]];
-    NSData* filebeforeData = [NSData dataWithContentsOfFile:pathbefore];
-    UIImage * imagebefroe = [UIImage imageWithData:filebeforeData];
-    if (!pathbefore) {
-        cell.photoOriginal.hidden = YES;
-    }else
-        cell.photoOriginal.hidden = NO;
-    [cell.photoOriginal setImage:imagebefroe forState:UIControlStateNormal];
+    //    NSString *pathbefore = [_beforepath objectAtIndex:indexPath.row];
+    //    NSData* filebeforeData = [NSData dataWithContentsOfFile:pathbefore];
+    //    UIImage * imagebefroe = [UIImage imageWithData:filebeforeData];
     
-
-    
-    NSString *pathafter = [CoreDataTool getImageAfterPathByCreatetime:[_creatTimeData objectAtIndex:indexPath.row]];
-    if (!pathafter) {
+    if (![[_beforepath objectAtIndexedSubscript:indexPath.row ]  isKindOfClass:[UIImage class]]) {
         cell.photoChange.hidden = YES;
-    }else
+    }else{
         cell.photoChange.hidden = NO;
-    NSData* fileafterData = [NSData dataWithContentsOfFile:pathafter];
-    UIImage * imageafter = [UIImage imageWithData:fileafterData];
-    [cell.photoChange setImage:imageafter forState:UIControlStateNormal];
-
-
-        
+        UIImage *imagebefore = [_beforepath objectAtIndex:indexPath.row];
+        [cell.photoOriginal setImage:imagebefore forState:UIControlStateNormal];
+    }
+    
+    
+    
+    //    NSString *pathafter = [CoreDataTool getImageAfterPathByCreatetime:[_creatTimeData objectAtIndex:indexPath.row]];
+    //    NSString *pathafter = [_afterpath objectAtIndex:indexPath.row];
+    //    NSData* fileafterData = [NSData dataWithContentsOfFile:pathafter];
+    //    UIImage * imageafter = [UIImage imageWithData:fileafterData];
+    
+    if (![[_afterpath objectAtIndexedSubscript:indexPath.row ] isKindOfClass:[UIImage class]]) {
+        cell.photoChange.hidden = YES;
+    }else{
+        cell.photoChange.hidden = NO;
+        UIImage *imageafter = [_afterpath objectAtIndex:indexPath.row];
+        [cell.photoChange setImage:imageafter forState:UIControlStateNormal];
+    }
+    
+    
     cell.timeLabel.text = [_creatTimes objectAtIndex:indexPath.row];
-        cell.delegate = self;
+    cell.delegate = self;
     
     return cell;
 }

@@ -259,7 +259,7 @@
 }
 
 +(NSString *)getImageBeforePathByCreatetime:(NSString *)createtime{
-
+    
     NSManagedObjectContext *context =  [CoreDataTool CreatCoreData:data_Name];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     request.entity = [NSEntityDescription entityForName:@"ImgHistory" inManagedObjectContext:context];
@@ -268,8 +268,16 @@
     NSArray *objs = [context executeFetchRequest:request error:&error ];
     NSMutableArray *arr = [NSMutableArray new];
     
-    for ( ImgHistory *his in objs) {
-        [arr addObject:his.imgLocalPath];
+    NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:nil ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sd, nil];
+    NSArray *userArray = [objs sortedArrayUsingDescriptors:sortDescriptors];
+    
+    if ([objs count]==0) {
+        [arr addObject:@" "];
+    }else{
+        for ( ImgHistory *his in userArray) {
+            [arr addObject:his.imgLocalPath];
+        }
     }
     
     return [arr firstObject];
@@ -285,10 +293,17 @@
     NSArray *objs = [context executeFetchRequest:request error:&error ];
     NSMutableArray *arr = [NSMutableArray new];
     
-    for ( ImgHistory *his in objs) {
-        [arr addObject:his.imgLocalPath];
-    }
+    NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:nil ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sd, nil];
+    NSArray *userArray = [objs sortedArrayUsingDescriptors:sortDescriptors];
     
+    if ([objs count]==0) {
+        [arr addObject:@" "];
+    }else{
+        for ( ImgHistory *his in userArray) {
+            [arr addObject:his.imgLocalPath];
+        }
+    }
     return [arr firstObject];
 }
 

@@ -20,5 +20,7 @@
 @property (strong,nonatomic) UIImageView *hintimage;
 @property (strong,nonatomic) UIButton *buttonAdd;
 @property (nonatomic, strong) UMFeedback *umFeedback;
+@property (strong, nonatomic) NSMutableArray *beforepath;
+@property (strong, nonatomic) NSMutableArray *afterpath;
 
 @end
