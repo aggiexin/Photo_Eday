@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FZLTZCHK.TTF</string>
+		<string>方正兰亭中黑_GBK</string>
+		<string>腾祥嘉丽超细圆简.ttf</string>
+		<string>汉仪娃娃篆简.ttf</string>
+		<string>segoe script.ttf</string>
+		<string>方正兰亭准黑_GBK.TTF</string>
+		<string>方正兰亭细黑_GBK.TTF</string>
+	</array>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>SBUsesNetwork</key>
 	<integer>3</integer>
 	<key>CFBundleDevelopmentRegion</key>

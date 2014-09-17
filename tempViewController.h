@@ -36,10 +36,11 @@ typedef NS_ENUM (NSInteger, NumberOfTemplete) {
 @property (strong, nonatomic) UIImageView *middleImage;
 @property (strong, nonatomic) UIImageView *templateBK;
 @property (strong, nonatomic) UIScrollView *tempScroll;
-@property (strong, nonatomic) UIView *destributionView;
-@property (strong, nonatomic) UIView *timeView;
+@property (strong, nonatomic) UIImageView *destributionView;
+@property (strong, nonatomic) UIImageView *timeView;
 @property (strong, nonatomic) UILabel *destributionTitle;
 @property (strong, nonatomic) UILabel *destributionSentence;
+@property (strong, nonatomic) UILabel *destributionSentencetwo;
 @property (strong, nonatomic) UILabel *monthday;
 @property (strong, nonatomic) UILabel *loc;
 @property (strong, nonatomic) UILabel *hourmin;
@@ -56,6 +57,8 @@ typedef NS_ENUM (NSInteger, NumberOfTemplete) {
 @property (strong, nonatomic) NSString*facechick;
 @property (strong, nonatomic) NSString *desSentence;
 @property (strong, nonatomic) NSString *desTitle;
+@property (strong, nonatomic) NSString *temperature;
+@property (strong, nonatomic) UILabel *temperaturelabel;
 @property NSInteger agevalue;
 @property NSInteger happyvalue;
 @property (strong, nonatomic) NSDate *creattime;

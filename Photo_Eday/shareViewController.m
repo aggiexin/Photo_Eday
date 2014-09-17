@@ -121,8 +121,7 @@
 
 }
 -(void)goQQspace{
-    
-    
+   
 //    //创建分享内容
 //    id<ISSContent> publishContent = [ShareSDK content:nil
 //                                       defaultContent:nil

@@ -108,6 +108,7 @@
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         
         NSDictionary *weatherinfo = [dict objectForKey:@"weatherinfo"];
+        _temperature = [weatherinfo objectForKey:@"temp2"];
         NSString *weather = [weatherinfo objectForKey:@"weather"];
         NSString *weatherfk = @"多云";
         NSRange range=[weather rangeOfString:@"转"];
@@ -208,8 +209,8 @@
 -(void)initsubview{
     _destributionTitle = [UILabel new];
     _destributionSentence = [UILabel new];
-    _timeView = [UIView new];
-    _destributionView = [UIView new];
+    _timeView = [UIImageView new];
+    _destributionView = [UIImageView new];
     _monthday = [UILabel new];
     _loc = [UILabel new];
     _hourmin = [UILabel new];
@@ -222,11 +223,15 @@
     _backgarysecend = [UILabel new];
     _backgaryfirst = [UILabel new];
     _watermark =[UIImageView new];
+    _temperaturelabel = [UILabel new];
+    _destributionSentencetwo = [UILabel new];
 }
 
 -(void)removesubview{
+    [_temperaturelabel removeFromSuperview];
     [_destributionTitle removeFromSuperview];
     [_destributionSentence removeFromSuperview];
+    [_destributionSentencetwo  removeFromSuperview];
     [_destributionView removeFromSuperview];
     [_timeView removeFromSuperview];
     [_loc removeFromSuperview];
@@ -571,17 +576,18 @@
     [self removesubview];
     [self initsubview];
     _templete = templeteOne;
-    //middle image
-    _destributionView.frame = CGRectMake(15, _middleImage.frame.size.height-150, 240, 90);
-    _destributionView.backgroundColor = [UIColor grayColor];
-    _destributionView.alpha = 0.2;
-    [_middleImage addSubview:_destributionView];
     
-    _destributionTitle.frame = CGRectMake(18,_middleImage.frame.size.height-150, 140, 35);
+    _happyimage.frame = CGRectMake(0, _middleImage.frame.size.height-153, 5, 70);
+    _happyimage.image = [UIImage imageNamed:@"telementonyellowline.png"];
+    [_middleImage addSubview:_happyimage];
+    
+    _destributionTitle.frame = CGRectMake(18,_middleImage.frame.size.height-165, 140, 50);
     _destributionTitle.text = _desTitle;
     _destributionTitle.alpha = 10;
     _destributionTitle.textColor = [UIColor whiteColor];
-    _destributionTitle.font = [UIFont fontWithName:@"Verdana" size:21.0];;
+    _destributionTitle.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:26.0];
+    _destributionTitle.shadowColor = [UIColor grayColor];
+    _destributionTitle.shadowOffset = CGSizeMake(1.0, 1);
     [_middleImage addSubview:_destributionTitle];
     
     _destributionSentence.Frame = CGRectMake(18, _middleImage.frame.size.height-126, 240, 50);
@@ -589,34 +595,39 @@
         _destributionSentence.text = _desSentence;
 
     _destributionSentence.textColor = [UIColor whiteColor];
-    _destributionSentence.alpha = 10;
-    _destributionSentence.font = [UIFont fontWithName:@"Verdana" size:16.0];;
+    _destributionSentence.shadowColor = [UIColor grayColor];
+    _destributionSentence.shadowOffset = CGSizeMake(1.0, 1);
+    _destributionSentence.font = [UIFont fontWithName:@"FZLanTingHei-L-GBK" size:16.0];
     [_middleImage addSubview:_destributionSentence];
     
     
-    _timeView.Frame=CGRectMake(PageW-90, _middleImage.frame.origin.y-50, 80, 80);
-    _timeView.tintColor = [UIColor whiteColor];
+    _timeView.Frame=CGRectMake(PageW-140, -11, 140, 70);
+    _timeView.image = [UIImage imageNamed:@"telementonyellowbk.png"];
     [_middleImage addSubview:_timeView];
     
-    _monthday.Frame=CGRectMake(0, 0, 80, 35);
-    _monthday.textColor = [ UIColor whiteColor];
-    _monthday.text = [TimeTool getMonthAndDay];
-    _monthday.textAlignment=NSTextAlignmentRight;
-    _monthday.font = [UIFont boldSystemFontOfSize:22];
-    [_timeView addSubview:_monthday];
+    _temperaturelabel.frame = CGRectMake(60, 5, 70, 35);
+    _temperaturelabel.font = [UIFont boldSystemFontOfSize:22];
+    _temperaturelabel.text = _temperature;
+    _temperaturelabel.textAlignment = NSTextAlignmentRight;
+    _temperaturelabel.textColor = [UIColor whiteColor];
+    [_timeView addSubview:_temperaturelabel];
     
-    _loc.Frame=CGRectMake(0, 28, 80, 25);
+    _weather.frame = CGRectMake(100, 35, 25, 25);
+    _weather.image = _weatherimage;
+    [_timeView addSubview:_weather];
+    
+    _loc.Frame=CGRectMake(0, 5, 70, 40);
     _loc.textColor = [ UIColor whiteColor];
     _loc.text = _city;
-    _loc.textAlignment = NSTextAlignmentRight;
-    _loc.font = [UIFont fontWithName:@"Verdana" size:17.0];
+    _loc.textAlignment = NSTextAlignmentCenter;
+    _loc.font = [UIFont boldSystemFontOfSize:22];
     [_timeView addSubview:_loc];
     
-    _hourmin.Frame = CGRectMake(0, 46, 80, 30);
+    _hourmin.Frame = CGRectMake(5, 35, 100, 30);
     _hourmin.textColor = [ UIColor whiteColor];
     _hourmin.text = [TimeTool getHoursAndMin];
-    _hourmin.textAlignment = NSTextAlignmentRight;
-    _hourmin.font = [UIFont fontWithName:@"Verdana" size:15.0];
+    _hourmin.textAlignment = NSTextAlignmentLeft;
+    _hourmin.font = [UIFont fontWithName:@"Verdana" size:14.0];
     [_timeView addSubview:_hourmin];
     
 }
@@ -625,58 +636,65 @@
     [self initsubview];
     _templete = templeteTwo;
     
-    _destributionView .Frame=CGRectMake(15, _middleImage.frame.size.height-285, 55, 170);
+    _destributionView .Frame=CGRectMake(15, _middleImage.frame.size.height-225, 90, 165);
+    _destributionView.image =[UIImage imageNamed:@"telementtwodestri.png"];
     [_middleImage addSubview:_destributionView];
     
-    _destributionTitle.Frame = CGRectMake(3,0, 40, 165);
+    _destributionTitle.Frame = CGRectMake(30,10, 30, 110);
     _destributionTitle.text = _desTitle;
+//    _destributionTitle.text = @"我有五个字";
+
     _destributionTitle.numberOfLines = [_destributionTitle.text length];
-    _destributionTitle.textColor = [UIColor whiteColor];
-    _destributionTitle.font = [UIFont boldSystemFontOfSize:25.0];
+    _destributionTitle.textColor = [UIColor darkGrayColor];
+    _destributionTitle.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:19];
+    _destributionTitle.shadowColor = [UIColor grayColor];
+    _destributionTitle.textAlignment = NSTextAlignmentCenter;
+//    _destributionTitle.shadowOffset = CGSizeMake(1.0, 1);
     [_destributionView addSubview:_destributionTitle];
 
-    _ageimage.frame = CGRectMake(3, 169, 15, 15);
+    _ageimage.frame = CGRectMake(13, 120, 15, 15);
     _ageimage.image = [UIImage imageNamed:@"age.png"];
     [_destributionView addSubview:_ageimage];
-    _agelabel.frame = CGRectMake(24, 166, 65, 25);
+    _agelabel.frame = CGRectMake(34, 116, 65, 25);
     _agelabel.text = [NSString stringWithFormat:@"年龄:%i", _agevalue];
-    _agelabel.textColor = [UIColor whiteColor];
-    _agelabel.font = [UIFont fontWithName:@"Verdana" size:13.5];
+    _agelabel.textColor = [UIColor darkGrayColor];
+    _agelabel.font = [UIFont fontWithName:@"Tensentype_JiaLiChaoXiYuanJ" size:12];
     [_destributionView addSubview:_agelabel];
     
-    _happyimage.frame = CGRectMake(3, 187, 15, 15);
+    _happyimage.frame = CGRectMake(13, 139, 15, 15);
     _happyimage.image = [UIImage imageNamed:@"happy.png"];
     [_destributionView addSubview:_happyimage];
-    _happylabel.frame = CGRectMake(24, 185, 65, 25);
+    _happylabel.frame = CGRectMake(34, 135, 65, 25);
     _happylabel.text = [NSString stringWithFormat:@"开心:%i",_happyvalue];
-    _happylabel.textColor = [UIColor whiteColor];
-    _happylabel.font = [UIFont fontWithName:@"Verdana" size:13.5];
+    _happylabel.textColor = [UIColor darkGrayColor];
+    _happylabel.font = [UIFont fontWithName:@"Tensentype_JiaLiChaoXiYuanJ" size:12];
     [_destributionView addSubview:_happylabel];
     
     
 
     
-    _timeView = [[UIView alloc]initWithFrame:CGRectMake(PageW-90, _middleImage.frame.origin.y-50, 90, 70)];
+    _timeView.frame = CGRectMake(PageW-105, 10, 100, 80);
+    _timeView.image = [UIImage imageNamed:@"telementtwolocbk.png"];
     [_middleImage addSubview:_timeView];
-    _loc.Frame=CGRectMake(0, 48, 80, 25);
-    _loc.textColor = [ UIColor whiteColor];
+    _loc.Frame=CGRectMake(30, 40, 35, 35);
+    _loc.textColor = [ UIColor darkGrayColor];
     _loc.text = _city;
     _loc.textAlignment = NSTextAlignmentRight;
-    _loc.font = [UIFont fontWithName:@"Verdana" size:17.0];
+    _loc.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:17.0];
     [_timeView addSubview:_loc];
     
-    _locimg.Frame = CGRectMake(25, 50, 20, 20);
-    _locimg.image = [UIImage imageNamed:@"iconwhite.png"];
-    [_timeView addSubview:_locimg];
+//    _locimg.Frame = CGRectMake(25, 50, 20, 20);
+//    _locimg.image = [UIImage imageNamed:@"iconwhite.png"];
+//    [_timeView addSubview:_locimg];
     
-    _monthday.Frame=CGRectMake(25, 5, 60, 45);
-    _monthday.textColor = [ UIColor whiteColor];
-    _monthday.text = _weatherstring;
-    _monthday.textAlignment=NSTextAlignmentRight;
-    _monthday.font = [UIFont boldSystemFontOfSize:26];
-    [_timeView addSubview:_monthday];
+    _temperaturelabel.Frame=CGRectMake(31, 13.5, 59, 30);
+    _temperaturelabel.textColor = [ UIColor darkGrayColor];
+    _temperaturelabel.text = _temperature;
+    _temperaturelabel.textAlignment=NSTextAlignmentRight;
+    _temperaturelabel.font = [UIFont boldSystemFontOfSize:17];
+    [_timeView addSubview:_temperaturelabel];
     
-    _weather.frame = CGRectMake(-5, 10, 40, 35);
+    _weather.frame = CGRectMake(9, 19.5, 22, 22);
     _weather.image = _weatherimage;
     [_timeView addSubview:_weather];
     
@@ -690,51 +708,79 @@
 
     _destributionTitle.frame = CGRectMake(20, 3, 150, 35);
     _destributionTitle.textColor = [UIColor whiteColor];
-    _destributionTitle.font = [UIFont boldSystemFontOfSize:24.0];
+    _destributionTitle.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:26.0];
+    _destributionTitle.shadowColor = [UIColor grayColor];
+    _destributionTitle.shadowOffset = CGSizeMake(1.0, 1);
     _destributionTitle.text = _desTitle;
     [_destributionView addSubview:_destributionTitle];
     
-    _weather.frame = CGRectMake(0, 35, 160, 1);
-    _weather.image = [UIImage  imageNamed:@"line.png"];
-    [_destributionView addSubview:_weather];
     
-    _ageimage.frame = CGRectMake(51, 40, 26, 21);
-    _ageimage.image = [UIImage imageNamed:@"diamond.png"];
-    [_destributionView addSubview:_ageimage];
+    if (_desSentence.length >12) {
+        
+        NSRange rangg1 = NSMakeRange(0, 12);
+        NSString *string = [_desSentence substringWithRange:rangg1];
+        _destributionSentence.frame = CGRectMake(0, 35, PageW/2+30, 30);
+        _destributionSentence.textColor = [UIColor blackColor];
+        _destributionSentence.backgroundColor = [UIColor whiteColor];
+        _destributionSentence.font = [UIFont fontWithName:@"FZLanTingHei-L-GBK" size:13];
+        _destributionSentence.text =[NSString stringWithFormat:@"“%@",string ];
+        _destributionSentence.textAlignment = NSTextAlignmentRight;
+        _destributionTitle.shadowColor = [UIColor grayColor];
+        _destributionSentence.shadowOffset = CGSizeMake(1.0, 1);
+        [_destributionView addSubview:_destributionSentence];
     
-    _destributionSentence.frame = CGRectMake(85, 35, PageW-85, 50);
-    _destributionSentence.numberOfLines = 2;
-    _destributionSentence.textColor = [UIColor whiteColor];
-    _destributionSentence.font = [UIFont fontWithName:@"" size:23];
-    _destributionSentence.text = _desSentence;
-    [_destributionView addSubview:_destributionSentence];
-    _locimg.Frame = CGRectMake(0, 0, 25, 25);
-    _locimg.image = [UIImage imageNamed:@"time.png"];
-    [_timeView addSubview:_locimg];
-    _monthday.Frame=CGRectMake(27, -5, 80, 35);
-    _monthday.textColor = [ UIColor whiteColor];
-    _monthday.textAlignment=NSTextAlignmentLeft;
-    _monthday.font = [UIFont boldSystemFontOfSize:23];
-    NSString *time =[TimeTool getMonthAndDay];
-    NSMutableAttributedString *attrString =
-    [[NSMutableAttributedString alloc] initWithString:time];
-    NSRange rang = [time rangeOfString:@"/"];
-    UIColor *color = REDCOLOR;
-    [attrString addAttribute:NSForegroundColorAttributeName
-                       value:color
-                       range:rang];
-    _monthday.attributedText = attrString;
-    [_timeView addSubview:_monthday];
+
+        NSRange rangg = NSMakeRange(12, _desSentence.length-12);
+        NSString *stringsec = [_desSentence substringWithRange:rangg];
+        _destributionSentencetwo.frame = CGRectMake(PageW/2-30, 65, PageW/2+30, 30);
+        _destributionSentencetwo.text =[NSString stringWithFormat:@"    %@”",stringsec ];
+        _destributionSentencetwo.textAlignment = NSTextAlignmentLeft;
+        _destributionSentencetwo.backgroundColor = [UIColor blackColor];
+        _destributionSentencetwo.textColor = [UIColor whiteColor];
+        _destributionSentencetwo.font = [UIFont fontWithName:@"FZLanTingHei-L-GBK" size:13];
+        _destributionSentencetwo.shadowOffset = CGSizeMake(1.0, 1);
+        _destributionTitle.shadowColor = [UIColor grayColor];
+        [_destributionView addSubview:_destributionSentencetwo];
+    }
     
-    _timeView.Frame=CGRectMake(20, _middleImage.frame.origin.y-50, 80, 80);
+    
+    
+    
+    _timeView.Frame=CGRectMake(10, 10, 90, 80);
     [_middleImage addSubview:_timeView];
     
-    _hourmin.Frame = CGRectMake(27, 5, 120, 80);
+    _monthday.Frame=CGRectMake(27, 0, 53, 20);
+    _monthday.textColor = [ UIColor whiteColor];
+    _monthday.textAlignment=NSTextAlignmentRight;
+    _monthday.font = [UIFont fontWithName:@"FZLTZCHK--GBK1-0" size:19];
+    _monthday.text = [TimeTool getMonthAndDay];
+    _monthday.shadowColor = [UIColor grayColor];
+    _monthday.shadowOffset = CGSizeMake(1.0, 1);
+    [_timeView addSubview:_monthday];
+    
+    _weather.Frame = CGRectMake(0, -5, 25, 25);
+    _weather.image = _weatherimage;
+    [_timeView addSubview:_weather];
+    
+
+    _hourmin.Frame = CGRectMake(0, 20, 80, 25);
     _hourmin.textColor = [ UIColor whiteColor];
-    _hourmin.text = [TimeTool getHoursAndMin];
-    _hourmin.textAlignment = NSTextAlignmentLeft;
-    _hourmin.font = [UIFont fontWithName:@"Verdana" size:18.5];
+    _hourmin.text = @"I am hear";
+    _hourmin.textAlignment = NSTextAlignmentRight;
+    _hourmin.font = [UIFont fontWithName:@"SegoeScript" size:15];
+    _hourmin.shadowColor = [UIColor grayColor];
+    _hourmin.shadowOffset = CGSizeMake(1.0, 1);
+
     [_timeView addSubview:_hourmin];
+    
+    _loc.frame = CGRectMake(0, 33 , 80, 30);
+    _loc.text = _city;
+    _loc.textAlignment = NSTextAlignmentRight;
+    _loc.textColor = [UIColor redColor];
+    _loc.font = [UIFont fontWithName:@"HYj2gj" size:15];
+//    _loc.shadowColor = [UIColor grayColor];
+//    _loc.shadowOffset = CGSizeMake(1.0, 1);
+    [_timeView addSubview:_loc];
 
 }
 -(void)TemplateFour{
@@ -742,33 +788,32 @@
     [self initsubview];
     _templete = templeteFour;
     
-    _backgaryfirst.frame = CGRectMake(0, 20, PageW, 20);
-    _backgaryfirst.backgroundColor = [UIColor grayColor];
-    _backgaryfirst.alpha = 0.3;
+    _backgaryfirst.frame = CGRectMake(0, 0, PageW*0.75, 20);
+    _backgaryfirst.backgroundColor = [UIColor blackColor];
+//    _backgaryfirst.alpha = 0.3;
     [_middleImage addSubview:_backgaryfirst];
     
-    _backgarysecend.frame = CGRectMake(190, 40, PageW-160, 20);
-    _backgarysecend.backgroundColor = [UIColor grayColor];
-    _backgarysecend.alpha = 0.2;
+    _backgarysecend.frame = CGRectMake(190, 20, PageW-160, 20);
+    _backgarysecend.backgroundColor = [UIColor whiteColor];
+//    _backgarysecend.alpha = 0.2;
     [_middleImage addSubview:_backgarysecend];
     
-    _locimg.frame = CGRectMake(200, 20, 17, 17);
-    _locimg.image = [UIImage imageNamed:@"locred.png"];
-    [_middleImage addSubview:_locimg];
-    
-    _loc.frame = CGRectMake(220, 20, 120, 20);
-    _loc.textAlignment = NSTextAlignmentLeft;
+    _loc.frame = CGRectMake(0, 0, PageW*0.75-10, 20);
+    _loc.textAlignment = NSTextAlignmentRight;
     _loc.text = _city;
     _loc.textColor = [UIColor whiteColor];
-    _loc.font = [UIFont fontWithName:@"Verdana" size:12];
+    _loc.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:14];
     [_middleImage addSubview:_loc];
     
-    _hourmin.frame = CGRectMake(160, 40, PageW-160, 20);
-    _hourmin.textAlignment = NSTextAlignmentRight;
-    _hourmin.text = [TimeTool getMonthDateHoursAndMin:_creattime];
-    _hourmin.font = [UIFont fontWithName:@"" size:11];
+    _hourmin.frame = CGRectMake(200, 20, PageW-160, 20);
+    _hourmin.textAlignment = NSTextAlignmentLeft;
+    _hourmin.text = [TimeTool getYearMonthAndDay];
+    _hourmin.font = [UIFont fontWithName:@"FZLanTingHei-L-GBK" size:14];
     [_middleImage addSubview:_hourmin];
     
+    _locimg.frame = CGRectMake(PageW-140, 0, 17, 17);
+    _locimg.image = [UIImage imageNamed:@"locred.png"];
+    [_middleImage addSubview:_locimg];
     
     _destributionView.frame = CGRectMake(20, PageH-420, 100, 200);
     [_middleImage addSubview:_destributionView];
@@ -777,68 +822,60 @@
     _destributionTitle.numberOfLines = [_destributionTitle.text length];
     
     _destributionTitle.text = _desTitle;
-    _destributionTitle.font = [UIFont boldSystemFontOfSize:25];
+    _destributionTitle.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:26.0];
+    _destributionTitle.shadowColor = [UIColor grayColor];
+    _destributionTitle.shadowOffset = CGSizeMake(1.0, 1);
     _destributionTitle.textColor = [UIColor whiteColor];
     [_destributionView addSubview:_destributionTitle];
     
-    
-    _destributionSentence.frame = CGRectMake(30, 50, 20, 200);
-    _destributionSentence.numberOfLines = [_destributionSentence.text length];
-    
-    if (_desSentence.length>10) {
-        NSRange rang = NSMakeRange(0, 10);
+    _happyimage.frame = CGRectMake(32, 35, 35, 35);
+    _happyimage.image = [UIImage imageNamed:@"jiaoshanga.png"];
+    [_destributionView addSubview:_happyimage];
+    if (_desSentence.length>12) {
+        
+        NSRange rang = NSMakeRange(0, 12);
         NSString *stringfirst = [_desSentence substringWithRange:rang];
+        _destributionSentence.frame = CGRectMake(50, 50, 20, 200);
+        _destributionSentence.numberOfLines = [_destributionSentence.text length];
         _destributionSentence.text = stringfirst;
-        _destributionSentence.font = [UIFont boldSystemFontOfSize:14];
-        _destributionSentence.textColor = [UIColor whiteColor];
+        _destributionSentence.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:14];
+        _destributionSentence.shadowColor = [UIColor grayColor];
+        _destributionSentence.shadowOffset = CGSizeMake(0.5, 0.5);
+        _destributionSentence.textColor = [UIColor blackColor];
         [_destributionView addSubview:_destributionSentence];
 
         
+        NSRange rangg1 = NSMakeRange(12, _desSentence.length-12);
+        _destributionSentencetwo.frame = CGRectMake(75, 35, 20, 200);
+        NSString *string = [_desSentence substringWithRange:rangg1];
+        _destributionSentencetwo.text = string;
+        _destributionSentencetwo.textColor = [UIColor blackColor];
+        _destributionSentencetwo.numberOfLines = [_destributionSentencetwo.text length];
+        _destributionSentencetwo.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:14];
+        _destributionSentencetwo.shadowColor = [UIColor grayColor];
+        _destributionSentencetwo.shadowOffset = CGSizeMake(0.5, 0.5);
+        _destributionSentencetwo.textColor = [UIColor blackColor];
+        [_destributionView addSubview:_destributionSentencetwo];
         
-        if (_desSentence.length - 10 >10) {
-            
-            NSRange rangg1 = NSMakeRange(10, 10);
-            _monthday.frame = CGRectMake(55, 70, 20, 200);
-            NSString *stringsec = [_desSentence substringWithRange:rangg1];
-            _monthday.text = stringsec;
-            _monthday.textColor = [UIColor whiteColor];
-            _monthday.numberOfLines = [_monthday.text length];
-            _monthday.font = [UIFont boldSystemFontOfSize:14];
-            [_destributionView addSubview:_monthday];
-            
-            
-            NSRange rangg = NSMakeRange(10, _desSentence.length-10-10);
-            _agelabel.frame = CGRectMake(80, 90, 20, 200);
-            NSString *stringthird = [_desSentence  substringWithRange:rangg];
-            _agelabel.text = stringthird;
-            _agelabel.textColor = [UIColor whiteColor];
-            _agelabel.numberOfLines = [_monthday.text length];
-            _agelabel.font = [UIFont boldSystemFontOfSize:14];
-            [_destributionView addSubview:_monthday];
-        }else{
-            NSRange rangg = NSMakeRange(10, _desSentence.length-10);
-            _monthday.frame = CGRectMake(55, 70, 20, 200);
-            NSString *stringsec = [_desSentence substringWithRange:rangg];
-            _monthday.text = stringsec;
-            _monthday.textColor = [UIColor whiteColor];
-            _monthday.numberOfLines = [_monthday.text length];
-            _monthday.font = [UIFont boldSystemFontOfSize:14];
-            [_destributionView addSubview:_monthday];
-        }
-
-        
-        
-     
-
-        
+        _ageimage.frame = CGRectMake(75, 245, 35, 35);
+        _ageimage.image = [UIImage imageNamed:@"jiaoxiaa.png"];
+        [_destributionView addSubview:_ageimage];
     }
     else{
+        _destributionSentence.frame = CGRectMake(50, 50, 20, 200);
+        _destributionSentence.numberOfLines = [_destributionSentence.text length];
         _destributionSentence.text = _desSentence;
-        _destributionSentence.font = [UIFont boldSystemFontOfSize:16.5];
-        _destributionSentence.textColor = [UIColor whiteColor];
+        _destributionSentence.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:14];
+        _destributionSentence.shadowColor = [UIColor grayColor];
+        _destributionSentence.shadowOffset = CGSizeMake(0.5, 0.5);
+        _destributionSentence.textColor = [UIColor blackColor];
         [_destributionView addSubview:_destributionSentence];
+
+        _ageimage.frame = CGRectMake(45, 230, 35, 35);
+        _ageimage.image = [UIImage imageNamed:@"jiaoxiaa.png"];
+        [_destributionView addSubview:_ageimage];
+
     }
-    
     
     
 }
@@ -847,57 +884,64 @@
     [self initsubview];
     _templete = templeteFive;
     
-    _timeView.frame = CGRectMake(20, 16, 100, 90);
+    _timeView.frame = CGRectMake(0, 0, 135, 110);
+    _timeView.image = [UIImage imageNamed:@"telementsixbk.png"];
     [_middleImage addSubview:_timeView];
     
-    _monthday.frame = CGRectMake(0,-15, 100, 50);
+    _monthday.frame = CGRectMake(10,0, 100, 40);
     _monthday.text = [TimeTool getYearMonthAndDay];
+    _monthday.textAlignment = NSTextAlignmentLeft;
     _monthday.textColor = [UIColor whiteColor];
-    _monthday.font = [UIFont boldSystemFontOfSize:19];
+    _monthday.font = [UIFont boldSystemFontOfSize:18.5];
     [_timeView addSubview:_monthday];
     
-    _hourmin.frame = CGRectMake(0, 10, 100, 40);
+    _hourmin.frame = CGRectMake(10, 20, 100, 40);
     _hourmin.text = [TimeTool getHoursAndMin];
     _hourmin.textColor = [UIColor whiteColor];
-    _hourmin.font = [UIFont fontWithName:@"Verdana" size:16];
-    _hourmin.textAlignment = NSTextAlignmentRight;
+    _hourmin.textAlignment = NSTextAlignmentLeft;
+    _hourmin.font = [UIFont fontWithName:@"Verdana" size:14];
     [_timeView addSubview:_hourmin];
     
-    _loc.frame = CGRectMake(0, 35, 100, 30);
+    _loc.frame = CGRectMake(25, 46, 100, 30);
     _loc.text = _city;
-    _loc.textAlignment = NSTextAlignmentRight;
+    _loc.textAlignment = NSTextAlignmentLeft;
     _loc.textColor = [UIColor whiteColor];
-    _loc.font = [UIFont boldSystemFontOfSize:16];
+    _loc.font = [UIFont boldSystemFontOfSize:12];
     [_timeView addSubview:_loc];
     
-    _locimg.frame = CGRectMake(50, 40, 15, 18);
-    _locimg.image = [UIImage imageNamed:@"locsnip.png"];
+    _locimg.frame = CGRectMake(10, 53, 15, 18);
+    _locimg.image = [UIImage imageNamed:@"whiteicon.png"];
     [_timeView addSubview:_locimg];
     
     
-    _destributionView.frame = CGRectMake(0, PageH-230, PageW, 60);
+    _destributionView.frame = CGRectMake(0, PageH-230, PageW, 70);
     [_middleImage addSubview:_destributionView];
     
-    _happylabel.frame = CGRectMake(180, -3, PageW-180, 35);
-    _happylabel.backgroundColor = [UIColor grayColor];
-    _happylabel.alpha = 0.2;
-    [_destributionView addSubview:_happylabel];
     
-    _destributionTitle.frame = CGRectMake(180, -10, 140, 50);
+    _destributionTitle.frame = CGRectMake(180, 20, 120, 35);
     _destributionTitle.textColor = [UIColor whiteColor];
     _destributionTitle.text = _desTitle;
-    _destributionTitle.font = [UIFont boldSystemFontOfSize:23];
+    _destributionTitle.textAlignment = NSTextAlignmentRight;
+    _destributionTitle.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:27.0];
+    _destributionTitle.shadowColor = [UIColor darkGrayColor];
+    _destributionTitle.shadowOffset = CGSizeMake(1.0, 1);
     [_destributionView addSubview:_destributionTitle];
     
-    _destributionSentence.frame = CGRectMake(0, 20, _destributionView.frame.size.width-20, 80);
+    
+    _weather.frame = CGRectMake(15, 53, PageW-30, 1.5);
+    _weather.image = [UIImage imageNamed:@"waterline.png"];
+    [_destributionView addSubview:_weather];
+    
+    _destributionSentence.frame = CGRectMake(0, 35, _destributionView.frame.size.width-20, 80);
     _destributionSentence.numberOfLines = 2;
     _destributionSentence.textColor = [UIColor whiteColor];
     _destributionSentence.text = _desSentence;
-    _destributionSentence.font = [UIFont boldSystemFontOfSize:18];
+    _destributionSentence.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:15.0];
+    _destributionSentence.shadowColor = [UIColor grayColor];
+    _destributionSentence.shadowOffset = CGSizeMake(1.0, 1);
     _destributionSentence.textAlignment = NSTextAlignmentRight;
     [_destributionView addSubview:_destributionSentence];
     
-
 }
 -(void)TemplateSix{
     [self removesubview];
@@ -906,71 +950,72 @@
     _templete = templeteSix;
 
     
-    _timeView.frame = CGRectMake(0, 0, 100, 100);
+    _timeView.frame = CGRectMake(PageW/2, PageH-210, PageW/2, 30);
     [_middleImage addSubview:_timeView];
     
-    _weather.frame = CGRectMake(20, 5, 40, 35);
-    _weather.image = _weatherimage;
-    [_timeView addSubview:_weather];
-    
-    _loc.frame = CGRectMake(52, -10, 50, 70);
-    _loc.textAlignment = NSTextAlignmentRight;
-    _loc.font = [UIFont boldSystemFontOfSize:20];
-    _loc.textColor = [UIColor whiteColor];
-    _loc.text = _weatherstring;
-    [_timeView addSubview:_loc];
-    
-    _monthday.frame = CGRectMake(0, 25, 100, 40);
-    _monthday.textAlignment = NSTextAlignmentRight;
-    _monthday.textColor = [UIColor whiteColor];
-    _monthday.text = [TimeTool getMonthAndDay];
-    _monthday.font = [UIFont fontWithName:@"Verdana" size:18];
-    [_timeView addSubview:_monthday];
-    
-    _hourmin.frame = CGRectMake(0, 45, 100, 40);
-    _hourmin.textColor = [UIColor whiteColor];
-    _hourmin.textAlignment = NSTextAlignmentRight;
-    _hourmin.text = [TimeTool getHoursAndMin];
-    _hourmin.font = [UIFont fontWithName:@"Verdana" size:16];
-    [_timeView addSubview:_hourmin];
 
     
+    _loc.frame = CGRectMake(0, 5, 40, 20);
+    _loc.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:12];
+    _loc.shadowColor = [UIColor grayColor];
+    _loc.shadowOffset = CGSizeMake(1.0, 1);
+    _loc.textAlignment = NSTextAlignmentLeft;
+    _loc.textColor = [UIColor whiteColor];
+    _loc.text = _city;
+    [_timeView addSubview:_loc];
     
-    _destributionView.frame = CGRectMake(0, PageH-210, PageW, 70);
-    _destributionView.backgroundColor = [UIColor grayColor];
-    _destributionView.alpha = 0.5;
-    [_middleImage addSubview:_destributionView];
     
-    _destributionTitle.frame = CGRectMake(PageW-233, PageH-215, 150, 40);
-    _destributionTitle.font = [UIFont boldSystemFontOfSize:25];
+    _hourmin.frame = CGRectMake(30, 5, 60, 20);
+    _hourmin.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:12];
+    _hourmin.shadowColor = [UIColor grayColor];
+    _hourmin.shadowOffset = CGSizeMake(1.0, 1);
+    _hourmin.textAlignment = NSTextAlignmentLeft;
+    _hourmin.textColor = [UIColor whiteColor];
+    _hourmin.text = [TimeTool getHoursAndMin];
+    [_timeView addSubview:_hourmin];
+    
+    _weather.frame = CGRectMake(90, -10, 50, 40);
+    _weather.image = [UIImage imageNamed:@"datebk.png"];
+    [_timeView addSubview:_weather];
+    
+    _monthday.frame = CGRectMake(95, -5, 40, 30);
+    _monthday.textAlignment = NSTextAlignmentCenter;
+    _monthday.textColor = [UIColor whiteColor];
+    _monthday.text = [TimeTool getMonthAndDay];
+    _monthday.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:16];
+    [_timeView addSubview:_monthday];
+    
+
+    
+    _destributionTitle.frame = CGRectMake(70, PageH-180, 150, 50);
+    _destributionTitle.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:30];
+    _destributionTitle.shadowColor = [UIColor darkGrayColor];
+    _destributionTitle.shadowOffset = CGSizeMake(1.0, 1);
     _destributionTitle.textColor = [UIColor whiteColor];
-    _destributionTitle.text = [NSString stringWithFormat:@"%@", _desTitle];
+    _destributionTitle.text = _desTitle;
     _destributionTitle.textAlignment = NSTextAlignmentRight;
     [_middleImage addSubview:_destributionTitle];
     
-    _ageimage.frame = CGRectMake(PageW-160, PageH-180, 15, 15);
+    _ageimage.frame = CGRectMake(230, PageH-170, 15, 15);
     _ageimage.image = [UIImage imageNamed:@"age.png"];
     [_middleImage addSubview:_ageimage];
-    
+//
     _agelabel.text = [NSString stringWithFormat:@"年龄:%i",_agevalue];
     _agelabel.font = [UIFont fontWithName:@"Verdana" size:15];
     _agelabel.textColor = [UIColor whiteColor];
-    _agelabel.frame = CGRectMake(PageW-140, PageH-198, 90, 50);
+    _agelabel.frame = CGRectMake(250, PageH-190, 90, 50);
     [_middleImage addSubview:_agelabel];
-    
-    _happyimage.frame = CGRectMake(PageW-160, PageH-165, 15, 15);
+//
+    _happyimage.frame = CGRectMake(230, PageH-150, 15, 15);
     _happyimage.image = [UIImage imageNamed:@"happy.png"];
     [_middleImage addSubview:_happyimage];
-    
-    _happylabel.frame = CGRectMake(PageW-140, PageH-182, 90, 50);
+//
+    _happylabel.frame = CGRectMake(250, PageH-170, 90, 50);
     _happylabel.text = [NSString stringWithFormat:@"开心:%i",_happyvalue];
     _happylabel.textColor = [UIColor whiteColor];
     _happylabel.font = [UIFont fontWithName:@"Verdana" size:15];
     [_middleImage addSubview:_happylabel];
     
-    _locimg.frame = CGRectMake(PageW-70, PageH-205, 50, 60);
-    _locimg.image = [UIImage imageNamed:@"hat.png"];
-    [_middleImage addSubview:_locimg];
 
 }
 -(void)SetTemplate{

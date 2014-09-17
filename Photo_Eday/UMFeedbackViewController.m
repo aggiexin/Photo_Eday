@@ -213,33 +213,19 @@ static UITapGestureRecognizer *tapRecognizer;
 }
 
 - (void)setBackButton {
-//    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//
-//    [backBtn addTarget:self action:@selector(backToPrevious) forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
-//    self.navigationItem.leftBarButtonItem = backButtonItem;
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(backToPrevious)];
-//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    btn.frame = CGRectMake(-10, -3, 46, 19) ;
-//    UIImage* image = [UIImage imageNamed:@"back.png"];
-//    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    [btn setImage:image forState:UIControlStateNormal];
-//    [btn addTarget:self action:@selector(backToPrevious) forControlEvents:UIControlEventTouchUpInside];
-////    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"关闭" style:UIBarButtonItemStyleBordered target:self action:@selector(backToPrevious)];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(backToPrevious)];
-//
-//    
-//
-//    backBtn.titleLabel.font = [UIFont systemFontOfSize:15.0];
-//    [backBtn setTitle:NSLocalizedString(@"返回", @"关闭") forState:UIControlStateNormal];
-//
-//    [backBtn setBackgroundImage:[UIImage imageNamed:@"nav_btn_bg"] forState:UIControlStateNormal];
-//    [backBtn setBackgroundImage:[UIImage imageNamed:@"nav_btn_bg_lighted"] forState:UIControlStateHighlighted];
-//    backBtn.frame = CGRectMake(-20, 10, 51.0f, self.navigationController.navigationBar.frame.size.height * 0.7);
-//    backBtn.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+
+    [backBtn addTarget:self action:@selector(backToPrevious) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.leftBarButtonItem = backButtonItem;
+
+    backBtn.titleLabel.font = [UIFont systemFontOfSize:15.0];
+    [backBtn setTitle:NSLocalizedString(@"返回", @"关闭") forState:UIControlStateNormal];
+
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"nav_btn_bg"] forState:UIControlStateNormal];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"nav_btn_bg_lighted"] forState:UIControlStateHighlighted];
+    backBtn.frame = CGRectMake(0, 0, 51.0f, self.navigationController.navigationBar.frame.size.height * 0.7);
+    backBtn.autoresizingMask = UIViewAutoresizingFlexibleHeight;
 }
 
 - (void)didTapAnywhere:(UITapGestureRecognizer *)recognizer {
@@ -380,13 +366,13 @@ static UITapGestureRecognizer *tapRecognizer;
 
 #pragma mark ContactViewController delegate method
 
-//- (void)updateContactInfo:(UMContactViewController *)controller contactInfo:(NSString *)info {
-//    if ([info length]) {
-//        self.mContactInfo = info;
-//        UILabel *title = (UILabel *) [self.mContactView viewWithTag:11];
-//        title.text = [NSString stringWithFormat:@"%@ : %@", NSLocalizedString(@"您的联系方式", @"您的联系方式"), info];
-//    }
-//}
+- (void)updateContactInfo:(UMContactViewController *)controller contactInfo:(NSString *)info {
+    if ([info length]) {
+        self.mContactInfo = info;
+        UILabel *title = (UILabel *) [self.mContactView viewWithTag:11];
+        title.text = [NSString stringWithFormat:@"%@ : %@", NSLocalizedString(@"您的联系方式", @"您的联系方式"), info];
+    }
+}
 
 #pragma mark Umeng Feedback delegate
 

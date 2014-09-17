@@ -22,6 +22,9 @@
 @synthesize wbtoken;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    
+    
     [ShareSDK registerApp:@"26c19060a35c"];
 
     NSUserDefaults *accountDefaults = [NSUserDefaults standardUserDefaults];
