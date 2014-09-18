@@ -11,8 +11,6 @@
 #import "CoreDataTool.h"
 #import <CoreData/CoreData.h>
 #import "InitData.h"
-#import <TencentOpenAPI/QQApiInterface.h>
-#import <TencentOpenAPI/TencentOAuth.h>
 #import "WeiboSDK.h"
 #import <ShareSDK/ShareSDK.h>
 #import "WeiboApi.h"
@@ -45,8 +43,6 @@
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:@"3333798819"];
     
-    _oauth = [[TencentOAuth alloc] initWithAppId:@"1101960550"
-                                     andDelegate:self];
 
 //    //……
     
@@ -82,9 +78,9 @@
     //旧版中申请的AppId（如：QQxxxxxx类型），可以通过下面方法进行初始化
     //    [ShareSDK connectQQWithAppId:@"QQ075BCD15" qqApiCls:[QQApi class]];
     
-    [ShareSDK connectQQWithQZoneAppKey:@"1101960550"
-                     qqApiInterfaceCls:[QQApiInterface class]
-                       tencentOAuthCls:[TencentOAuth class]];
+//    [ShareSDK connectQQWithQZoneAppKey:@"1101960550"
+//                     qqApiInterfaceCls:[QQApiInterface class]
+//                       tencentOAuthCls:[TencentOAuth class]];
     
     //添加微信应用 注册网址 http://open.weixin.qq.com
     [ShareSDK connectWeChatWithAppId:@"wx32a52a5c2222b080"

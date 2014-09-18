@@ -52,40 +52,19 @@
     
 }
 -(void)setUI{
-//navigationBar.barTintColor
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn2];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(backCamera)];
-//    self.navigationItem.leftBarButtonItem.style = UIBarButtonSystemItemAdd;
-//    UIImageView *savedLabel = [[UIImageView alloc]initWithFrame:CGRectMake(PageW/2-60, 99, 116, 20)];
-//    savedLabel.image = [UIImage imageNamed:@"saved.png"];
-//    [self.view addSubview:savedLabel];
-//   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(backCamera)];
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    btn.frame = CGRectMake(-10, -3, 46, 19) ;
-//    UIImage* image = [UIImage imageNamed:@"back.png"];
-//    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    [btn setImage:image forState:UIControlStateNormal];
-//    [btn addTarget:self action:@selector(backCamera) forControlEvents:UIControlEventTouchUpInside];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(backCamera)];
-//    [self.navigationItem.leftBarButtonItem  = [UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonItemStyleBordered target:self action:@selector(backCamera)];
-//       self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStyleDone target:self action:@selector(backCamera)];
-    
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(backCamera)];
-    
-//    [self.navigationItem.leftBarButtonItem setAction:@selector(backCamera)];
-    
     UIView *shareActions = [[UIView alloc]initWithFrame:CGRectMake(0, 140, 320, PageH-110)];
 //    shareActions.backgroundColor  = [UIColor grayColor];
     [self.view addSubview:shareActions];
 
     
-    UIButton *qq = [UIButton buttonWithType:UIButtonTypeCustom];
-    [qq setImage:[UIImage imageNamed:@"QQ-2.png"] forState:UIControlStateNormal];
-    [qq addTarget:self action:@selector(goQQ) forControlEvents:UIControlEventTouchUpInside];
-//    qq.frame = CGRectMake(95, 100, 55, 75);
-    qq.frame = CGRectMake(20, 0, 55, 75);
-    [shareActions addSubview:qq];
+//    UIButton *qq = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [qq setImage:[UIImage imageNamed:@"QQ-2.png"] forState:UIControlStateNormal];
+//    [qq addTarget:self action:@selector(goQQ) forControlEvents:UIControlEventTouchUpInside];
+////    qq.frame = CGRectMake(95, 100, 55, 75);
+//    qq.frame = CGRectMake(20, 0, 55, 75);
+//    [shareActions addSubview:qq];
     
     UIButton *wx = [UIButton buttonWithType:UIButtonTypeCustom];
     [wx setImage:[UIImage imageNamed:@"WX.png"] forState:UIControlStateNormal];
@@ -108,7 +87,8 @@
     UIButton *tcWB = [UIButton buttonWithType:UIButtonTypeCustom];
     [tcWB setImage:[UIImage imageNamed:@"tcWB.png"] forState:UIControlStateNormal];
     [tcWB addTarget:self action:@selector(gotcwb) forControlEvents:UIControlEventTouchUpInside];
-    tcWB.frame = CGRectMake(20, 100, 55, 75);
+//    tcWB.frame = CGRectMake(20, 100, 55, 75);
+    tcWB.frame = CGRectMake(20, 0, 55, 75);
     [shareActions addSubview:tcWB];
     
 
@@ -120,118 +100,6 @@
     
 
 }
--(void)goQQspace{
-   
-//    //创建分享内容
-//    id<ISSContent> publishContent = [ShareSDK content:nil
-//                                       defaultContent:nil
-//                                                image:[ShareSDK pngImageWithImage:_image]
-//                                                title:NSLocalizedString(@"元气魔镜", @"Hello")
-//                                                  url:[NSURL URLWithString:_imagePath]
-//                                          description:nil
-//                                            mediaType:SSPublishContentMediaTypeImage];
-//    
-//    id<ISSContent> content = [ShareSDK content:nil
-//                                defaultContent:nil
-//                                         image:[ShareSDK pngImageWithImage:_image]
-//                                         title:nil
-//                                           url:nil
-//                                   description:nil
-//                                     mediaType:SSPublishContentMediaTypeImage];
-//    
-//    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
-//                                                         allowCallback:YES
-//                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
-//                                                          viewDelegate:nil
-//                                               authManagerViewDelegate:nil];
-//    
-//    
-//    
-//    [ShareSDK shareContent:publishContent
-//                      type:ShareTypeQQSpace
-//               authOptions:authOptions
-//             statusBarTips:YES
-//                    result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-//                        
-//                        if (state == SSPublishContentStateSuccess)
-//                        {
-//                            NSLog(@"success");
-//                        }
-//                        else if (state == SSPublishContentStateFail)
-//                        {
-//                            if ([error errorCode] == -22003)
-//                            {
-//                                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"TEXT_TIPS", @"提示")
-//                                                                                    message:[error errorDescription]
-//                                                                                   delegate:nil
-//                                                                          cancelButtonTitle:NSLocalizedString(@"TEXT_KNOW", @"知道了")
-//                                                                          otherButtonTitles:nil];
-//                                [alertView show];
-//                            }
-//                        }
-//                    }];
-
-//
-//    NSData *imgData = UIImagePNGRepresentation(_image);
-//    QQApiImageObject *imgObj = [QQApiImageObject objectWithData:imgData
-//                                               previewImageData:imgData
-//                                                          title:nil
-//                                                    description:nil];
-//    SendMessageToQQReq *req = [SendMessageToQQReq reqWithContent:imgObj];
-//    //将内容分享到qq
-//    QQApiSendResultCode sent = [QQApiInterface SendReqToQZone:req];
-
-    
-    
-    
-//    NSString *code = [NSString stringWithFormat:@"https://graph.qq.com/photo/upload_pic"];
-//    //第一步，创建URL
-//    NSURL *url = [NSURL URLWithString:code];
-//    //第二步，创建请求
-//    
-//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
-//    
-//    
-//    [request setHTTPMethod:@"POST"];//设置请求方式为POST，默认为GET
-//    NSData *data = UIImagePNGRepresentation(_image);
-//    [request setHTTPBody:data];
-//    //第三步，连接服务器
-//    NSData *received = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-//    
-//    
-//    NSString *str1 = [[NSString alloc]initWithData:received encoding:NSUTF8StringEncoding];
-    [self TEST2];
-}
-
--(void)TEST2{
-    
-    _oauth = [[TencentOAuth alloc] initWithAppId:@"1101960550"
-                                     andDelegate:self];
-//
-    NSArray *permissions = [NSArray arrayWithObjects:@"all",nil];
-    if ( YES ==[_oauth authorize:permissions inSafari:NO]) {
-        NSLog(@"登录成功");
-    }
-    
-
-    TCUploadPicDic *params = [TCUploadPicDic dictionary];
-    params.paramPicture = _image;
-    params.paramTitle = @"风云乔布斯";
-    params.paramPhotodesc = @"比天皇巨星还天皇巨星的天皇巨星";
-    params.paramMobile = @"1";
-    params.paramNeedfeed = @"1";
-//    params.paramX = @"39.909407";
-//    params.paramY = @"116.397521";
-    
-    if (NO == [_oauth uploadPicWithParams:params])
-    {
-        NSLog(@"分享失败");
-//        [sdkCall showInvalidTokenOrOpenIDMessage];
-    };
-
-
-}
-
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {

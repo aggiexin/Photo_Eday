@@ -9,13 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "WXApi.h"
 #import "WeiboSDK.h"
-#import <TencentOpenAPI/TencentOAuth.h>
-#import <TencentOpenAPI/TencentOAuthObject.h>
-#import <TencentOpenAPI/TencentApiInterface.h>
-@interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate,WeiboSDKDelegate,TencentSessionDelegate,TencentApiInterfaceDelegate>
+//#import <TencentOpenAPI/TencentOAuth.h>
+//#import <TencentOpenAPI/TencentOAuthObject.h>
+//#import <TencentOpenAPI/TencentApiInterface.h>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate,WeiboSDKDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *wbtoken;
-@property (nonatomic, retain)TencentOAuth *oauth;
 
 @end
