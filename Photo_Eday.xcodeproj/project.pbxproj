@@ -116,14 +116,6 @@
 		4534B51D19AB60F7009974A9 /* libc++abi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4534B51C19AB60F7009974A9 /* libc++abi.dylib */; };
 		4534B51F19AB6248009974A9 /* blackline.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B51E19AB6248009974A9 /* blackline.png */; };
 		4534B52119AB63C5009974A9 /* grayline.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B52019AB63C4009974A9 /* grayline.png */; };
-		4534B5FA19AC6A74009974A9 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B5F919AC6A74009974A9 /* 1.png */; };
-		4534B60219AC6A91009974A9 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B5FB19AC6A91009974A9 /* 2.png */; };
-		4534B60319AC6A91009974A9 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B5FC19AC6A91009974A9 /* 3.png */; };
-		4534B60419AC6A91009974A9 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B5FD19AC6A91009974A9 /* 4.png */; };
-		4534B60519AC6A91009974A9 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B5FE19AC6A91009974A9 /* 5.png */; };
-		4534B60619AC6A91009974A9 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B5FF19AC6A91009974A9 /* 6.png */; };
-		4534B60719AC6A91009974A9 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B60019AC6A91009974A9 /* 7.png */; };
-		4534B60819AC6A91009974A9 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B60119AC6A91009974A9 /* 8.png */; };
 		4534B60B19AC6BAC009974A9 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B60919AC6BAC009974A9 /* delete.png */; };
 		4534B60C19AC6BAC009974A9 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 4534B60A19AC6BAC009974A9 /* share.png */; };
 		455A99A1197F93C500F8B040 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 455A99A0197F93C500F8B040 /* SystemConfiguration.framework */; };
@@ -264,6 +256,16 @@
 		45BB57DC19C9C7E100A5B346 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45BB579F19C9C7E100A5B346 /* ShareSDKiPhoneSimpleShareViewUI.bundle */; };
 		45BB57DD19C9C7E100A5B346 /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BB57A019C9C7E100A5B346 /* ShareSDKiPhoneSimpleShareViewUI.framework */; };
 		45BB57DE19C9C7E100A5B346 /* ShareSDKShareActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BB57A119C9C7E100A5B346 /* ShareSDKShareActionSheet.framework */; };
+		45BB57E219CA9B7600A5B346 /* oragnebk.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BB57DF19CA9B7600A5B346 /* oragnebk.png */; };
+		45BB57EA19CAA1A300A5B346 /* yinhao1.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BB57E919CAA1A300A5B346 /* yinhao1.png */; };
+		45BB57EC19CAA1C500A5B346 /* yinhao2.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BB57EB19CAA1C500A5B346 /* yinhao2.png */; };
+		45BB57EE19CAA4D500A5B346 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BB57ED19CAA4D500A5B346 /* 1.png */; };
+		45BB57F019CAA4F100A5B346 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BB57EF19CAA4F100A5B346 /* 3.png */; };
+		45BB57F219CAA50C00A5B346 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BB57F119CAA50C00A5B346 /* 2.png */; };
+		45BB57F419CAA52600A5B346 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BB57F319CAA52600A5B346 /* 5.png */; };
+		45BB57F619CAA56100A5B346 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BB57F519CAA56100A5B346 /* 6.png */; };
+		45BB57F819CAA58600A5B346 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BB57F719CAA58600A5B346 /* 7.png */; };
+		45BB57FA19CAA59200A5B346 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BB57F919CAA59200A5B346 /* 4.png */; };
 		45CD1FCB19A5CBEA0040E25E /* 1.心.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CD1FB519A5CBEA0040E25E /* 1.心.png */; };
 		45CD1FCC19A5CBEA0040E25E /* 2.雨伞.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CD1FB619A5CBEA0040E25E /* 2.雨伞.png */; };
 		45CD1FCD19A5CBEA0040E25E /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CD1FB719A5CBEA0040E25E /* cloud.png */; };
@@ -448,14 +450,6 @@
 		4534B51C19AB60F7009974A9 /* libc++abi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++abi.dylib"; path = "usr/lib/libc++abi.dylib"; sourceTree = SDKROOT; };
 		4534B51E19AB6248009974A9 /* blackline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackline.png; sourceTree = "<group>"; };
 		4534B52019AB63C4009974A9 /* grayline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayline.png; sourceTree = "<group>"; };
-		4534B5F919AC6A74009974A9 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		4534B5FB19AC6A91009974A9 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-		4534B5FC19AC6A91009974A9 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
-		4534B5FD19AC6A91009974A9 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
-		4534B5FE19AC6A91009974A9 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
-		4534B5FF19AC6A91009974A9 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
-		4534B60019AC6A91009974A9 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
-		4534B60119AC6A91009974A9 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		4534B60919AC6BAC009974A9 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		4534B60A19AC6BAC009974A9 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		455A99A0197F93C500F8B040 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -617,6 +611,16 @@
 		45BB579F19C9C7E100A5B346 /* ShareSDKiPhoneSimpleShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKiPhoneSimpleShareViewUI.bundle; sourceTree = "<group>"; };
 		45BB57A019C9C7E100A5B346 /* ShareSDKiPhoneSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneSimpleShareViewUI.framework; sourceTree = "<group>"; };
 		45BB57A119C9C7E100A5B346 /* ShareSDKShareActionSheet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKShareActionSheet.framework; sourceTree = "<group>"; };
+		45BB57DF19CA9B7600A5B346 /* oragnebk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oragnebk.png; sourceTree = "<group>"; };
+		45BB57E919CAA1A300A5B346 /* yinhao1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yinhao1.png; sourceTree = "<group>"; };
+		45BB57EB19CAA1C500A5B346 /* yinhao2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yinhao2.png; sourceTree = "<group>"; };
+		45BB57ED19CAA4D500A5B346 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		45BB57EF19CAA4F100A5B346 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		45BB57F119CAA50C00A5B346 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		45BB57F319CAA52600A5B346 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		45BB57F519CAA56100A5B346 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		45BB57F719CAA58600A5B346 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		45BB57F919CAA59200A5B346 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		45CD1FB519A5CBEA0040E25E /* 1.心.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1.心.png"; sourceTree = "<group>"; };
 		45CD1FB619A5CBEA0040E25E /* 2.雨伞.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2.雨伞.png"; sourceTree = "<group>"; };
 		45CD1FB719A5CBEA0040E25E /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
@@ -1091,6 +1095,9 @@
 		459E736619C9291900297F3A /* newphoto */ = {
 			isa = PBXGroup;
 			children = (
+				45BB57E919CAA1A300A5B346 /* yinhao1.png */,
+				45BB57EB19CAA1C500A5B346 /* yinhao2.png */,
+				45BB57DF19CA9B7600A5B346 /* oragnebk.png */,
 				459E738819C995A500297F3A /* datebk.png */,
 				459E738619C9919300297F3A /* waterline.png */,
 				459E738419C98DD200297F3A /* whiteicon.png */,
@@ -1352,14 +1359,13 @@
 				45CD1FC819A5CBEA0040E25E /* 8-3.阴天.png */,
 				45CD1FC919A5CBEA0040E25E /* 8-4.雨天.png */,
 				45CD1FCA19A5CBEA0040E25E /* 8-5.位置icon.png */,
-				4534B5F919AC6A74009974A9 /* 1.png */,
-				4534B5FB19AC6A91009974A9 /* 2.png */,
-				4534B5FC19AC6A91009974A9 /* 3.png */,
-				4534B5FD19AC6A91009974A9 /* 4.png */,
-				4534B5FE19AC6A91009974A9 /* 5.png */,
-				4534B5FF19AC6A91009974A9 /* 6.png */,
-				4534B60019AC6A91009974A9 /* 7.png */,
-				4534B60119AC6A91009974A9 /* 8.png */,
+				45BB57ED19CAA4D500A5B346 /* 1.png */,
+				45BB57EF19CAA4F100A5B346 /* 3.png */,
+				45BB57F119CAA50C00A5B346 /* 2.png */,
+				45BB57F319CAA52600A5B346 /* 5.png */,
+				45BB57F519CAA56100A5B346 /* 6.png */,
+				45BB57F719CAA58600A5B346 /* 7.png */,
+				45BB57F919CAA59200A5B346 /* 4.png */,
 			);
 			name = TemPlate;
 			sourceTree = "<group>";
@@ -1452,18 +1458,16 @@
 				4534B4D519A846C8009974A9 /* gender2age2smile3glass2.png in Resources */,
 				455A9A051982123300F8B040 /* eyes.png in Resources */,
 				450DDD641982602F00BF57F1 /* WX.png in Resources */,
-				4534B60219AC6A91009974A9 /* 2.png in Resources */,
 				4534B4C519A8445C009974A9 /* gender1age1smile3glass2.png in Resources */,
 				4534B51319A84A2A009974A9 /* gender1age4smile2glass2.png in Resources */,
 				459E738119C9893100297F3A /* jiaoshanga.png in Resources */,
 				45CD1FDC19A5CBEA0040E25E /* sunny.png in Resources */,
-				4534B60519AC6A91009974A9 /* 5.png in Resources */,
-				4534B60619AC6A91009974A9 /* 6.png in Resources */,
 				4534B4C319A84436009974A9 /* gender2age1smile2glass2.png in Resources */,
 				45CD1FDD19A5CBEA0040E25E /* 8-2.多云.png in Resources */,
 				4534B4BF19A843E3009974A9 /* gender2age1smile1glass2.png in Resources */,
 				4534B4F819A848FF009974A9 /* gender1age2smile1glass1.png in Resources */,
 				45CD1FE219A5EF870040E25E /* line.png in Resources */,
+				45BB57F619CAA56100A5B346 /* 6.png in Resources */,
 				450DDD5019824CC800BF57F1 /* greenback.png in Resources */,
 				4598C5D119B6FBA300546F2B /* logo.png in Resources */,
 				4534B51F19AB6248009974A9 /* blackline.png in Resources */,
@@ -1480,14 +1484,16 @@
 				45CD1FD919A5CBEA0040E25E /* 7.开心icon.png in Resources */,
 				45315FD5197E3CDD00FD148F /* Images.xcassets in Resources */,
 				4598C5A219B59E7D00546F2B /* snow3.png in Resources */,
+				45BB57FA19CAA59200A5B346 /* 4.png in Resources */,
 				45CD1FCC19A5CBEA0040E25E /* 2.雨伞.png in Resources */,
+				45BB57F419CAA52600A5B346 /* 5.png in Resources */,
+				45BB57E219CA9B7600A5B346 /* oragnebk.png in Resources */,
 				45CD1FE019A5CBEA0040E25E /* 8-5.位置icon.png in Resources */,
 				459E737D19C9797F00297F3A /* 方正兰亭细黑_GBK.TTF in Resources */,
 				4534B50419A8499F009974A9 /* gender1age3smile1glass1.png in Resources */,
 				450DDD481982363E00BF57F1 /* camera.png in Resources */,
 				459E737219C95A1000297F3A /* telementtwolocbk.png in Resources */,
 				455A9A021981FF2000F8B040 /* DetailTableViewCell.xib in Resources */,
-				4534B60719AC6A91009974A9 /* 7.png in Resources */,
 				45CD1FD619A5CBEA0040E25E /* locred.png in Resources */,
 				4534B4DF19A8473D009974A9 /* gender2age3smile1glass2.png in Resources */,
 				45CD1FD419A5CBEA0040E25E /* time.png in Resources */,
@@ -1503,7 +1509,6 @@
 				4598C58F19B59DFB00546F2B /* rain1.png in Resources */,
 				45CD1FD519A5CBEA0040E25E /* diamond.png in Resources */,
 				4598C5A319B59E7D00546F2B /* snowrain.png in Resources */,
-				4534B60319AC6A91009974A9 /* 3.png in Resources */,
 				45BB57DC19C9C7E100A5B346 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
 				450DDD691982629C00BF57F1 /* qqSpace.png in Resources */,
 				45BB57D119C9C7E100A5B346 /* WeiboSDK.bundle in Resources */,
@@ -1521,10 +1526,10 @@
 				459E738319C98C6000297F3A /* telementsixbk.png in Resources */,
 				4598C5EC19B70C9E00546F2B /* start480x2.png in Resources */,
 				45BB57C919C9C7E100A5B346 /* PinterestSDKResources.bundle in Resources */,
-				4534B60819AC6A91009974A9 /* 8.png in Resources */,
 				450DDD671982602F00BF57F1 /* QQ-2.png in Resources */,
 				45CD1FDE19A5CBEA0040E25E /* 8-3.阴天.png in Resources */,
 				45CD1FCB19A5CBEA0040E25E /* 1.心.png in Resources */,
+				45BB57F019CAA4F100A5B346 /* 3.png in Resources */,
 				45BB57D319C9C7E100A5B346 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				4598C5A419B59E7D00546F2B /* snow4.png in Resources */,
 				451AF78F19C6B2B400FB571B /* turnback.png in Resources */,
@@ -1534,9 +1539,9 @@
 				459E76A919C9BB1900297F3A /* umFeedback.bundle in Resources */,
 				4534B50719A8499F009974A9 /* gender1age3smile2glass2.png in Resources */,
 				459E738019C9893100297F3A /* jiaoxiaa.png in Resources */,
-				4534B60419AC6A91009974A9 /* 4.png in Resources */,
 				4534B4FA19A848FF009974A9 /* gender1age2smile2glass1.png in Resources */,
 				450DDD6E198370FC00BF57F1 /* templateBK.png in Resources */,
+				45BB57EC19CAA1C500A5B346 /* yinhao2.png in Resources */,
 				45315FD0197E3CDD00FD148F /* Main.storyboard in Resources */,
 				4534B51419A84A2A009974A9 /* gender1age4smile3glass1.png in Resources */,
 				459E738919C995A500297F3A /* datebk.png in Resources */,
@@ -1563,6 +1568,7 @@
 				4534B4E019A8473D009974A9 /* gender2age3smile2glass1.png in Resources */,
 				4534B4DE19A8473D009974A9 /* gender2age3smile1glass1.png in Resources */,
 				4534B4C719A844A4009974A9 /* gender2age1smile3glass2.png in Resources */,
+				45BB57EA19CAA1A300A5B346 /* yinhao1.png in Resources */,
 				4598C5D619B6FCB500546F2B /* logo58.png in Resources */,
 				4534B4F919A848FF009974A9 /* gender1age2smile1glass2.png in Resources */,
 				45CD1FD819A5CBEA0040E25E /* 7.多云.png in Resources */,
@@ -1577,6 +1583,7 @@
 				450DDD4A19823A1800BF57F1 /* binggo.png in Resources */,
 				45CD1FD319A5CBEA0040E25E /* iconwhite.png in Resources */,
 				45CD1FDA19A5CBEA0040E25E /* hat.png in Resources */,
+				45BB57F819CAA58600A5B346 /* 7.png in Resources */,
 				459E738719C9919300297F3A /* waterline.png in Resources */,
 				4534B4FD19A848FF009974A9 /* gender1age2smile3glass2.png in Resources */,
 				45CD1FDB19A5CBEA0040E25E /* 7.年龄icon.png in Resources */,
@@ -1590,6 +1597,7 @@
 				45CD1FD219A5CBEA0040E25E /* sun.png in Resources */,
 				4534B4D319A846C8009974A9 /* gender2age2smile2glass2.png in Resources */,
 				450DDD621982602F00BF57F1 /* pyquan.png in Resources */,
+				45BB57F219CAA50C00A5B346 /* 2.png in Resources */,
 				4534B60B19AC6BAC009974A9 /* delete.png in Resources */,
 				45CD1FCF19A5CBEA0040E25E /* rain.png in Resources */,
 				4534B60C19AC6BAC009974A9 /* share.png in Resources */,
@@ -1601,11 +1609,11 @@
 				450DDD631982602F00BF57F1 /* tcWB.png in Resources */,
 				4598C5D719B6FCB500546F2B /* logo80.png in Resources */,
 				4534B4F019A848B7009974A9 /* gender2age4smile3glass1.png in Resources */,
-				4534B5FA19AC6A74009974A9 /* 1.png in Resources */,
 				459E738519C98DD200297F3A /* whiteicon.png in Resources */,
 				4598C5DD19B6FD2200546F2B /* logo40.png in Resources */,
 				4534B4D219A846C8009974A9 /* gender2age2smile2glass1.png in Resources */,
 				4598C59019B59DFB00546F2B /* rain2.png in Resources */,
+				45BB57EE19CAA4D500A5B346 /* 1.png in Resources */,
 				4534B51519A84A2A009974A9 /* gender1age4smile3glass2.png in Resources */,
 				459E737319C95A1000297F3A /* telementtwodestri.png in Resources */,
 			);

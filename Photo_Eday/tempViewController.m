@@ -464,36 +464,21 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)setUI{
-    //UP
-//    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-//    btn1.frame = CGRectMake(0, 0, 66, 18) ;
-//    UIImage* image = [UIImage imageNamed:@"saveandshare.png"];
-//    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];//保持原有形态
-//    [btn1 setImage:image forState:UIControlStateNormal];
-////    [btn1 setTitle:@"保存与分享" forState:UIControlStateNormal];
-//    [btn1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [btn1 addTarget:self action:@selector(shareandsave) forControlEvents:UIControlEventTouchUpInside];
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn1];
-//    self.navigationController.navigationItem.leftBarButtonItem.title = @"返回";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"保存  " style:UIBarButtonItemStyleBordered target:self action:@selector(shareandsave)];
-
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(bakmain)];
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(bakmain)];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-//
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    btn.frame = CGRectMake(-10, -3, 46, 19) ;
-//    UIImage* image = [UIImage imageNamed:@"back.png"];
-//    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    [btn setImage:image forState:UIControlStateNormal];
-//    [btn addTarget:self action:@selector(backback) forControlEvents:UIControlEventTouchUpInside];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(backback)];
 
     
   //DOWN
+    if (PageH==480) {
+    _buttomBackGround = [[UIImageView alloc]initWithFrame:CGRectMake(0, PageH, PageW, 64)];
+    }else {
     _buttomBackGround = [[UIImageView alloc]initWithFrame:CGRectMake(0, PageH-64, PageW, 64)];
+    }
+
     _buttomBackGround.userInteractionEnabled = YES;//打开用户交互
     _buttomBackGround.image = [UIImage imageNamed:@"greenback.png"];
     [self.view addSubview:_buttomBackGround];
@@ -516,7 +501,31 @@
     [_cameraButton addTarget:self action:@selector(takephotoagain) forControlEvents:UIControlEventTouchUpInside];
     
     [_buttomBackGround addSubview:_cameraButton];
+    
+    if (PageH ==480) {
+        _middleImage.userInteractionEnabled = YES;
+        UITapGestureRecognizer *chick = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(chickImage)];
+        [_middleImage addGestureRecognizer:chick];
+    }
 
+}
+
+-(void)chickImage{
+    if (!isChickImage) {
+        [UIView animateWithDuration:0.3 animations:^{[_buttomBackGround setFrame:CGRectMake(0, PageH-64, PageW, 78)];
+        }completion:^(BOOL finished) {
+            isChickImage = YES;
+        }];
+    }else{
+        [UIView animateWithDuration:0.3 animations:^{[_buttomBackGround setFrame:CGRectMake(0, PageH, PageW, 64)];
+        }completion:^(BOOL finished) {
+            isChickImage = NO;
+        }];
+    }
+    [UIView animateWithDuration:0.3 animations:^{[_tempScroll setFrame:CGRectMake(0, PageH, PageW, 76)];
+    }completion:^(BOOL finished) {
+        chickTemplateOpen = NO;
+    }];
 }
 
 
@@ -564,7 +573,9 @@
         case templeteSix:
             _watermark.frame = CGRectMake(PageW-70, 0, 70, 20);
             break;
-            
+        case templeteSeven:
+            _watermark.frame = CGRectMake(PageW-70, 0, 70, 20);
+            break;
         default:
             break;
     }
@@ -577,11 +588,11 @@
     [self initsubview];
     _templete = templeteOne;
     
-    _happyimage.frame = CGRectMake(0, _middleImage.frame.size.height-153, 5, 70);
+    _happyimage.frame = CGRectMake(0, _middleImage.frame.size.height-89, 5, 70);
     _happyimage.image = [UIImage imageNamed:@"telementonyellowline.png"];
     [_middleImage addSubview:_happyimage];
     
-    _destributionTitle.frame = CGRectMake(18,_middleImage.frame.size.height-165, 140, 50);
+    _destributionTitle.frame = CGRectMake(18,_middleImage.frame.size.height-101, 140, 50);
     _destributionTitle.text = _desTitle;
     _destributionTitle.alpha = 10;
     _destributionTitle.textColor = [UIColor whiteColor];
@@ -590,7 +601,7 @@
     _destributionTitle.shadowOffset = CGSizeMake(1.0, 1);
     [_middleImage addSubview:_destributionTitle];
     
-    _destributionSentence.Frame = CGRectMake(18, _middleImage.frame.size.height-126, 240, 50);
+    _destributionSentence.Frame = CGRectMake(18, _middleImage.frame.size.height-62, 240, 50);
     _destributionSentence.numberOfLines = 2;
         _destributionSentence.text = _desSentence;
 
@@ -636,7 +647,7 @@
     [self initsubview];
     _templete = templeteTwo;
     
-    _destributionView .Frame=CGRectMake(15, _middleImage.frame.size.height-225, 90, 165);
+    _destributionView .Frame=CGRectMake(15, _middleImage.frame.size.height-171, 90, 165);
     _destributionView.image =[UIImage imageNamed:@"telementtwodestri.png"];
     [_middleImage addSubview:_destributionView];
     
@@ -694,7 +705,7 @@
     _temperaturelabel.font = [UIFont boldSystemFontOfSize:17];
     [_timeView addSubview:_temperaturelabel];
     
-    _weather.frame = CGRectMake(9, 19.5, 22, 22);
+    _weather.frame = CGRectMake(9, 17.5, 22, 22);
     _weather.image = _weatherimage;
     [_timeView addSubview:_weather];
     
@@ -703,7 +714,7 @@
     [self removesubview];
     [self initsubview];
     _templete = templeteThree;
-    _destributionView.Frame=CGRectMake(0, _middleImage.frame.size.height-165, 300, 70);
+    _destributionView.Frame=CGRectMake(0, _middleImage.frame.size.height-101, 300, 70);
     [_middleImage addSubview:_destributionView];
 
     _destributionTitle.frame = CGRectMake(20, 3, 150, 35);
@@ -758,7 +769,7 @@
     _monthday.shadowOffset = CGSizeMake(1.0, 1);
     [_timeView addSubview:_monthday];
     
-    _weather.Frame = CGRectMake(0, -5, 25, 25);
+    _weather.Frame = CGRectMake(0, -2, 25, 25);
     _weather.image = _weatherimage;
     [_timeView addSubview:_weather];
     
@@ -815,10 +826,10 @@
     _locimg.image = [UIImage imageNamed:@"locred.png"];
     [_middleImage addSubview:_locimg];
     
-    _destributionView.frame = CGRectMake(20, PageH-420, 100, 200);
+    _destributionView.frame = CGRectMake(20, _middleImage.frame.size.height-300, 100, 200);
     [_middleImage addSubview:_destributionView];
     
-    _destributionTitle.frame = CGRectMake(0, 0, 35, 170);
+    _destributionTitle.frame = CGRectMake(0, -10, 35, 170);
     _destributionTitle.numberOfLines = [_destributionTitle.text length];
     
     _destributionTitle.text = _desTitle;
@@ -828,14 +839,14 @@
     _destributionTitle.textColor = [UIColor whiteColor];
     [_destributionView addSubview:_destributionTitle];
     
-    _happyimage.frame = CGRectMake(32, 35, 35, 35);
+    _happyimage.frame = CGRectMake(22, 35, 35, 35);
     _happyimage.image = [UIImage imageNamed:@"jiaoshanga.png"];
     [_destributionView addSubview:_happyimage];
     if (_desSentence.length>12) {
         
         NSRange rang = NSMakeRange(0, 12);
         NSString *stringfirst = [_desSentence substringWithRange:rang];
-        _destributionSentence.frame = CGRectMake(50, 50, 20, 200);
+        _destributionSentence.frame = CGRectMake(40, 50, 20, 200);
         _destributionSentence.numberOfLines = [_destributionSentence.text length];
         _destributionSentence.text = stringfirst;
         _destributionSentence.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:14];
@@ -846,7 +857,7 @@
 
         
         NSRange rangg1 = NSMakeRange(12, _desSentence.length-12);
-        _destributionSentencetwo.frame = CGRectMake(75, 35, 20, 200);
+        _destributionSentencetwo.frame = CGRectMake(60, 35, 20, 200);
         NSString *string = [_desSentence substringWithRange:rangg1];
         _destributionSentencetwo.text = string;
         _destributionSentencetwo.textColor = [UIColor blackColor];
@@ -857,12 +868,12 @@
         _destributionSentencetwo.textColor = [UIColor blackColor];
         [_destributionView addSubview:_destributionSentencetwo];
         
-        _ageimage.frame = CGRectMake(75, 245, 35, 35);
+        _ageimage.frame = CGRectMake(55, 245, 35, 35);
         _ageimage.image = [UIImage imageNamed:@"jiaoxiaa.png"];
         [_destributionView addSubview:_ageimage];
     }
     else{
-        _destributionSentence.frame = CGRectMake(50, 50, 20, 200);
+        _destributionSentence.frame = CGRectMake(40, 50, 20, 200);
         _destributionSentence.numberOfLines = [_destributionSentence.text length];
         _destributionSentence.text = _desSentence;
         _destributionSentence.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:14];
@@ -871,7 +882,7 @@
         _destributionSentence.textColor = [UIColor blackColor];
         [_destributionView addSubview:_destributionSentence];
 
-        _ageimage.frame = CGRectMake(45, 230, 35, 35);
+        _ageimage.frame = CGRectMake(30, 230, 35, 35);
         _ageimage.image = [UIImage imageNamed:@"jiaoxiaa.png"];
         [_destributionView addSubview:_ageimage];
 
@@ -914,11 +925,11 @@
     [_timeView addSubview:_locimg];
     
     
-    _destributionView.frame = CGRectMake(0, PageH-230, PageW, 70);
+    _destributionView.frame = CGRectMake(0, _middleImage.frame.size.height-100, PageW, 70);
     [_middleImage addSubview:_destributionView];
     
     
-    _destributionTitle.frame = CGRectMake(180, 20, 120, 35);
+    _destributionTitle.frame = CGRectMake(150, 20, 150, 35);
     _destributionTitle.textColor = [UIColor whiteColor];
     _destributionTitle.text = _desTitle;
     _destributionTitle.textAlignment = NSTextAlignmentRight;
@@ -932,7 +943,7 @@
     _weather.image = [UIImage imageNamed:@"waterline.png"];
     [_destributionView addSubview:_weather];
     
-    _destributionSentence.frame = CGRectMake(0, 35, _destributionView.frame.size.width-20, 80);
+    _destributionSentence.frame = CGRectMake(10, 35, _destributionView.frame.size.width-20, 80);
     _destributionSentence.numberOfLines = 2;
     _destributionSentence.textColor = [UIColor whiteColor];
     _destributionSentence.text = _desSentence;
@@ -950,7 +961,7 @@
     _templete = templeteSix;
 
     
-    _timeView.frame = CGRectMake(PageW/2, PageH-210, PageW/2, 30);
+    _timeView.frame = CGRectMake(PageW/2, _middleImage.frame.size.height-80, PageW/2, 30);
     [_middleImage addSubview:_timeView];
     
 
@@ -965,7 +976,7 @@
     [_timeView addSubview:_loc];
     
     
-    _hourmin.frame = CGRectMake(30, 5, 60, 20);
+    _hourmin.frame = CGRectMake(30, 5, 75, 20);
     _hourmin.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:12];
     _hourmin.shadowColor = [UIColor grayColor];
     _hourmin.shadowOffset = CGSizeMake(1.0, 1);
@@ -974,11 +985,11 @@
     _hourmin.text = [TimeTool getHoursAndMin];
     [_timeView addSubview:_hourmin];
     
-    _weather.frame = CGRectMake(90, -10, 50, 40);
+    _weather.frame = CGRectMake(100, -10, 50, 40);
     _weather.image = [UIImage imageNamed:@"datebk.png"];
     [_timeView addSubview:_weather];
     
-    _monthday.frame = CGRectMake(95, -5, 40, 30);
+    _monthday.frame = CGRectMake(105, -5, 40, 30);
     _monthday.textAlignment = NSTextAlignmentCenter;
     _monthday.textColor = [UIColor whiteColor];
     _monthday.text = [TimeTool getMonthAndDay];
@@ -987,7 +998,7 @@
     
 
     
-    _destributionTitle.frame = CGRectMake(70, PageH-180, 150, 50);
+    _destributionTitle.frame = CGRectMake(70, _middleImage.frame.size.height-55, 150, 50);
     _destributionTitle.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:30];
     _destributionTitle.shadowColor = [UIColor darkGrayColor];
     _destributionTitle.shadowOffset = CGSizeMake(1.0, 1);
@@ -996,21 +1007,21 @@
     _destributionTitle.textAlignment = NSTextAlignmentRight;
     [_middleImage addSubview:_destributionTitle];
     
-    _ageimage.frame = CGRectMake(230, PageH-170, 15, 15);
+    _ageimage.frame = CGRectMake(230, _middleImage.frame.size.height-45, 15, 15);
     _ageimage.image = [UIImage imageNamed:@"age.png"];
     [_middleImage addSubview:_ageimage];
 //
     _agelabel.text = [NSString stringWithFormat:@"年龄:%i",_agevalue];
     _agelabel.font = [UIFont fontWithName:@"Verdana" size:15];
     _agelabel.textColor = [UIColor whiteColor];
-    _agelabel.frame = CGRectMake(250, PageH-190, 90, 50);
+    _agelabel.frame = CGRectMake(250, _middleImage.frame.size.height-65, 90, 50);
     [_middleImage addSubview:_agelabel];
 //
-    _happyimage.frame = CGRectMake(230, PageH-150, 15, 15);
+    _happyimage.frame = CGRectMake(230, _middleImage.frame.size.height-27, 15, 15);
     _happyimage.image = [UIImage imageNamed:@"happy.png"];
     [_middleImage addSubview:_happyimage];
 //
-    _happylabel.frame = CGRectMake(250, PageH-170, 90, 50);
+    _happylabel.frame = CGRectMake(250, _middleImage.frame.size.height-47, 90, 50);
     _happylabel.text = [NSString stringWithFormat:@"开心:%i",_happyvalue];
     _happylabel.textColor = [UIColor whiteColor];
     _happylabel.font = [UIFont fontWithName:@"Verdana" size:15];
@@ -1018,62 +1029,118 @@
     
 
 }
+-(void)TemplateSeven{
+    [self removesubview];
+    [self initsubview];
+    
+    _timeView.frame = CGRectMake(10, 10, 90, 90);
+    _timeView.image = [UIImage imageNamed:@"oragnebk.png"];
+    [_middleImage addSubview:_timeView];
+    
+    _temperaturelabel.frame = CGRectMake(25, 20, 40, 40);
+    _temperaturelabel.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:26];
+    _temperaturelabel.textColor = [UIColor whiteColor];
+    _temperaturelabel.textAlignment = NSTextAlignmentCenter;
+    
+    NSRange rang = NSMakeRange(0, _temperature.length-1);
+    NSString *temp = [_temperature substringWithRange:rang];
+    _temperaturelabel.text = temp;
+    [_timeView addSubview:_temperaturelabel];
+    
+    _monthday.frame = CGRectMake(28, 50, 40, 40);
+    _monthday.font = [UIFont fontWithName:@"FZLanTingHei-L-GBK" size:16];
+    _monthday.textColor = [UIColor whiteColor];
+    _monthday.text = _weatherstring;
+    [_timeView addSubview:_monthday];
+    
+    
+    _destributionView.frame = CGRectMake(0, _middleImage.frame.size.height-100, PageW, 100);
+    [_middleImage addSubview:_destributionView];
+    
+    _destributionTitle.frame = CGRectMake(20, 0, 220, 50);
+    _destributionTitle.text = _desTitle;
+    _destributionTitle.textColor = [UIColor whiteColor];
+    _destributionTitle.font = [UIFont fontWithName:@"FZLanTingHeiS-DB1-GBK" size:28];
+    _destributionTitle.shadowColor = [UIColor darkGrayColor];
+    _destributionTitle.shadowOffset = CGSizeMake(1.0, 1);
+    [_destributionView addSubview:_destributionTitle];
+    
+    _happyimage.frame = CGRectMake(20, 40, 22, 21);
+    _happyimage.image = [UIImage imageNamed:@"yinhao1"];
+    [_destributionView addSubview:_happyimage];
+    
+    _destributionSentence.frame = CGRectMake(55, 40, 225, 50);
+    _destributionSentence.numberOfLines = 2;
+    _destributionSentence.text = _desSentence;
+    _destributionSentence.font = [UIFont fontWithName:@"FZLanTingHei-L-GBK" size:16];
+    _destributionSentence.shadowColor = [UIColor darkGrayColor];
+    _destributionSentence.shadowOffset = CGSizeMake(1, 1);
+    _destributionSentence.textColor = [UIColor whiteColor];
+    [_destributionView addSubview:_destributionSentence];
+    
+    _ageimage.frame = CGRectMake(PageW-40, 48, 22, 21);
+    _ageimage.image = [UIImage imageNamed:@"yinhao2.png"];
+    [_destributionView addSubview:_ageimage];
+    
+
+
+}
 -(void)SetTemplate{
-    _tempScroll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, PageH-64, PageW, 76)];
+    _tempScroll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, PageH, PageW, 76)];
     [_tempScroll showsHorizontalScrollIndicator];
     _tempScroll.backgroundColor = [UIColor blackColor];
     _tempScroll.alpha = 0.6;
-    [_tempScroll setContentSize:CGSizeMake(80*6+20, 76)];
+    [_tempScroll setContentSize:CGSizeMake(80*7+20, 65)];
     [self.view addSubview:_tempScroll];
     
-    _templateBK = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 80*9+20, 76)];
+    _templateBK = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 80*9+20, 65)];
 //    _templateBK.image = [UIImage imageNamed:@"templateBK.png"];
     _templateBK.userInteractionEnabled = YES;
     [_tempScroll addSubview:_templateBK];
     
-    UIButton *template1 = [[UIButton alloc]initWithFrame:CGRectMake(15, 5, 55, 66)];
+    UIButton *template1 = [[UIButton alloc]initWithFrame:CGRectMake(15, 10, 55, 55)];
     template1.tag =1;
     [template1 setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
     [template1 addTarget:self action:@selector(chooseTemplate:) forControlEvents:UIControlEventTouchUpInside];
     [_templateBK addSubview:template1];
     
-    UIButton *template2 = [[UIButton alloc]initWithFrame:CGRectMake(15+80, 5, 55, 66)];
+    UIButton *template2 = [[UIButton alloc]initWithFrame:CGRectMake(15+80, 10, 55, 55)];
     template2.tag =2;
-    [template2 setImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
+    [template2 setImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
     [template2 addTarget:self action:@selector(chooseTemplate:) forControlEvents:UIControlEventTouchUpInside];
     [_templateBK addSubview:template2];
     
     
-    UIButton *template3 = [[UIButton alloc]initWithFrame:CGRectMake(15+80*2, 5, 55, 66)];
+    UIButton *template3 = [[UIButton alloc]initWithFrame:CGRectMake(15+80*2, 10, 55, 55)];
     template3.tag =3;
-    [template3 setImage:[UIImage imageNamed:@"4"] forState:UIControlStateNormal];
+    [template3 setImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
     [template3 addTarget:self action:@selector(chooseTemplate:) forControlEvents:UIControlEventTouchUpInside];
     [_templateBK addSubview:template3];
     
-    UIButton *template4 = [[UIButton alloc]initWithFrame:CGRectMake(15+80*3, 5, 55, 66)];
+    UIButton *template4 = [[UIButton alloc]initWithFrame:CGRectMake(15+80*3, 10, 55, 55)];
     template4.tag =4;
     [template4 setImage:[UIImage imageNamed:@"5"] forState:UIControlStateNormal];
     [template4 addTarget:self action:@selector(chooseTemplate:) forControlEvents:UIControlEventTouchUpInside];
     [_templateBK addSubview:template4];
     
-    UIButton *template5 = [[UIButton alloc]initWithFrame:CGRectMake(15+80*4, 5, 55, 66)];
+    UIButton *template5 = [[UIButton alloc]initWithFrame:CGRectMake(15+80*4, 10, 55, 55)];
     template5.tag =5;
     [template5 setImage:[UIImage imageNamed:@"6"] forState:UIControlStateNormal];
     [template5 addTarget:self action:@selector(chooseTemplate:) forControlEvents:UIControlEventTouchUpInside];
     [_templateBK addSubview:template5];
     
-    UIButton *template6 = [[UIButton alloc]initWithFrame:CGRectMake(15+80*5, 5, 55, 66)];
+    UIButton *template6 = [[UIButton alloc]initWithFrame:CGRectMake(15+80*5, 10, 55, 55)];
     template6.tag =6;
     [template6 setImage:[UIImage imageNamed:@"7"] forState:UIControlStateNormal];
     [template6 addTarget:self action:@selector(chooseTemplate:) forControlEvents:UIControlEventTouchUpInside];
     [_templateBK addSubview:template6];
     
-//    UIButton *template7 = [[UIButton alloc]initWithFrame:CGRectMake(15+80*6, 5, 55, 66)];
-//    template7.tag =7;
-//    [template7 setImage:[UIImage imageNamed:@"模板_8"] forState:UIControlStateNormal];
-//    [template7 addTarget:self action:@selector(chooseTemplate:) forControlEvents:UIControlEventTouchUpInside];
-//    [_templateBK addSubview:template7];
-//    
+    UIButton *template7 = [[UIButton alloc]initWithFrame:CGRectMake(15+80*6, 10, 55, 55)];
+    template7.tag =7;
+    [template7 setImage:[UIImage imageNamed:@"4"] forState:UIControlStateNormal];
+    [template7 addTarget:self action:@selector(chooseTemplate:) forControlEvents:UIControlEventTouchUpInside];
+    [_templateBK addSubview:template7];
+//
 //    UIButton *template8 = [[UIButton alloc]initWithFrame:CGRectMake(15+80*7, 5, 55, 66)];
 //    template8.tag =8;
 //    [template8 setImage:[UIImage imageNamed:@"模板_9"] forState:UIControlStateNormal];
@@ -1084,7 +1151,8 @@
 
 }
 -(void)chooseTemplate:(UIButton*)sender{
-    [UIView animateWithDuration:0.3 animations:^{[_tempScroll setFrame:CGRectMake(0, PageH-64, PageW, 76)];
+    
+    [UIView animateWithDuration:0.3 animations:^{[_tempScroll setFrame:CGRectMake(0, PageH, PageW, 76)];
     }completion:^(BOOL finished) {
         chickTemplateOpen = NO;
     }];
@@ -1115,6 +1183,11 @@
             [self TemplateSix];
             [self reloadInputViews];
             break;
+        case 7:
+            [self TemplateSeven];
+            [self reloadInputViews];
+            break;
+
         default:
             break;
     }

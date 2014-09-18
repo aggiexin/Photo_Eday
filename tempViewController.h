@@ -14,6 +14,7 @@
     BOOL ischanged;
     BOOL isSecendtake;
     BOOL bingochange;
+    BOOL isChickImage;
     CLLocationManager *locationManager;
      float currLat;
      float currLog;
@@ -27,6 +28,7 @@ typedef NS_ENUM (NSInteger, NumberOfTemplete) {
 	templeteFour = 4,
     templeteFive = 5,
     templeteSix = 6,
+    templeteSeven = 7,
 };
 @property (nonatomic)NumberOfTemplete templete;
 @property (strong, nonatomic) IBOutlet UIButton *cameraButton;
