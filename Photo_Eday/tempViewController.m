@@ -634,7 +634,7 @@
     _loc.font = [UIFont boldSystemFontOfSize:22];
     [_timeView addSubview:_loc];
     
-    _hourmin.Frame = CGRectMake(5, 35, 100, 30);
+    _hourmin.Frame = CGRectMake(15, 35, 100, 30);
     _hourmin.textColor = [ UIColor whiteColor];
     _hourmin.text = [TimeTool getHoursAndMin];
     _hourmin.textAlignment = NSTextAlignmentLeft;
@@ -776,7 +776,7 @@
 
     _hourmin.Frame = CGRectMake(0, 20, 80, 25);
     _hourmin.textColor = [ UIColor whiteColor];
-    _hourmin.text = @"I am hear";
+    _hourmin.text = @"I am here";
     _hourmin.textAlignment = NSTextAlignmentRight;
     _hourmin.font = [UIFont fontWithName:@"SegoeScript" size:15];
     _hourmin.shadowColor = [UIColor grayColor];
@@ -1030,6 +1030,7 @@
 
 }
 -(void)TemplateSeven{
+    _templete = templeteSeven;
     [self removesubview];
     [self initsubview];
     
@@ -1078,7 +1079,7 @@
     _destributionSentence.textColor = [UIColor whiteColor];
     [_destributionView addSubview:_destributionSentence];
     
-    _ageimage.frame = CGRectMake(PageW-40, 48, 22, 21);
+    _ageimage.frame = CGRectMake(PageW-40, 52, 22, 21);
     _ageimage.image = [UIImage imageNamed:@"yinhao2.png"];
     [_destributionView addSubview:_ageimage];
     
