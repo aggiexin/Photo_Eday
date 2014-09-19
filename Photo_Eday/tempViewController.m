@@ -47,15 +47,16 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [SVProgressHUD showWithStatus:@"人脸识别中请稍后..."];
-
+    _buttomBackGround.userInteractionEnabled = NO;
     self.view.userInteractionEnabled= NO;
-    
+    [SVProgressHUD showWithStatus:@"人脸识别中请稍后..."];
     _middleImage.image = _imagebefore;
 
 
 }
 -(void)viewDidAppear:(BOOL)animated{
+    if (alertdiss==NO) {
+
     NSInteger internetType = [Internet ChickInternet];
     
     if (internetType==0) {
@@ -72,23 +73,28 @@
     if ([faceArr count]==0 && isbacktomain==NO) {
 //        [SVProgressHUD showErrorWithStatus:@"识别失败"];
         [SVProgressHUD dismiss];
-        
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"亲,没找到人脸哦" message:nil delegate:self cancelButtonTitle:@"重新拍一张" otherButtonTitles:nil];
         alertView.tag = 1;
         [alertView show];
     }else{
-        [SVProgressHUD showSuccessWithStatus:@"识别成功"];
-
+        
         _agevalue = [FaceTool getAge:_imgInfo] ;
         _happyvalue = [FaceTool getHappy:_imgInfo];
         _desSentence = [FaceTool getDescriptionSentence:_imgInfo];
         _desTitle = [FaceTool getDescriptionTitle:_imgInfo];
         _creattime = [NSDate date];
-        [self TemplateThree];
+        _city = @"上海";
+        [self TemplateOne];
         [self getcity];
-           }
+        [SVProgressHUD showSuccessWithStatus:@"识别成功"];
+     
+
+        }
     }
     self.view.userInteractionEnabled = YES;
+    }
+    [SVProgressHUD dismiss];
+
 }
 
 -(void)getweather:(NSString*)city{
@@ -152,7 +158,9 @@
         }else{
             _weatherimage = [UIImage imageNamed:@"deadagain.png"];
         }
-    
+        
+//        [SVProgressHUD showSuccessWithStatus:@"识别成功"];
+        _buttomBackGround.userInteractionEnabled = YES;
         _weatherstring = weatherfk;
 }];
     
@@ -260,9 +268,11 @@
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"backmain" object:nil];
     isbacktomain = YES;
+    alertdiss = YES;
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)takephotoagain{
+    
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIImagePickerController * picker = [[UIImagePickerController alloc]init];
         picker.sourceType=UIImagePickerControllerSourceTypeCamera;
@@ -294,7 +304,7 @@
 
     }
     ischanged = NO;
-    
+    bingochange = NO;
 //    if(UIGraphicsBeginImageContextWithOptions != NULL)
 //    {
 //        UIGraphicsBeginImageContextWithOptions(image.size, NO, 0.0);
@@ -320,7 +330,6 @@
 -(void)bingo{
     self.view.userInteractionEnabled = NO;
 //        UIImage *turnimage = _middleImage.image;
-//    UIGraphicsEndImageContext();
     if (!ischanged ) {
         [self addwatermark];
 
@@ -330,9 +339,8 @@
         } else {
             UIGraphicsBeginImageContext(_middleImage.frame.size);
         }
-//    UIGraphicsBeginImageContext(_middleImage.frame.size);
-    [_middleImage.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage* viewImage = UIGraphicsGetImageFromCurrentImageContext();
+        [_middleImage.layer renderInContext:UIGraphicsGetCurrentContext()];
+        UIImage* viewImage = UIGraphicsGetImageFromCurrentImageContext();
         _middleImage.image = [FaceTool getImage:_imgInfo];
         _imagebeforechanged = viewImage;
         _imageafter = [FaceTool getImage:_imgInfo];
@@ -340,7 +348,12 @@
         bingochange =YES;
         [_watermark removeFromSuperview];
     }else if (bingochange == YES){
-        UIGraphicsBeginImageContext(_middleImage.bounds.size);
+        if(UIGraphicsBeginImageContextWithOptions != NULL)
+        {
+            UIGraphicsBeginImageContextWithOptions(_middleImage.frame.size, NO, 0.0);
+        } else {
+            UIGraphicsBeginImageContext(_middleImage.frame.size);
+        }
         //2.把显示内容渲染进画布
         [_middleImage.layer renderInContext:UIGraphicsGetCurrentContext()];
         //3.把图片从画布中取出来
@@ -375,9 +388,6 @@
             UIGraphicsBeginImageContext(_middleImage.frame.size);
         }
         
-//        UIGraphicsBeginImageContextWithOptions(CGSizeMake(640, 960), YES, 0);
-        //1.创建画布
-//        UIGraphicsBeginImageContext(_middleImage.bounds.size);
         //2.把显示内容渲染进画布
         [_middleImage.layer renderInContext:UIGraphicsGetCurrentContext()];
         //3.把图片从画布中取出来
@@ -479,7 +489,7 @@
     _buttomBackGround = [[UIImageView alloc]initWithFrame:CGRectMake(0, PageH-64, PageW, 64)];
     }
 
-    _buttomBackGround.userInteractionEnabled = YES;//打开用户交互
+//    _buttomBackGround.userInteractionEnabled = YES;//打开用户交互
     _buttomBackGround.image = [UIImage imageNamed:@"greenback.png"];
     [self.view addSubview:_buttomBackGround];
     
@@ -1227,6 +1237,10 @@
             NSString *city = [placemark.administrativeArea substringWithRange:range];
             _city = city;
             [self getweather:city];
+//            [SVProgressHUD showSuccessWithStatus:@"识别成功"];
+            
+           
+
         }
     }];
     
@@ -1318,8 +1332,13 @@
             [NSException raise:NSInternalInconsistencyException format:@"Invalid image orientation"];
             
     }
-    
-    UIGraphicsBeginImageContext(bounds.size);
+    if(UIGraphicsBeginImageContextWithOptions != NULL)
+    {
+        UIGraphicsBeginImageContextWithOptions(_middleImage.frame.size, NO, 0.0);
+    } else {
+        UIGraphicsBeginImageContext(_middleImage.frame.size);
+    }
+//    UIGraphicsBeginImageContext(bounds.size);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     

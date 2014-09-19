@@ -19,6 +19,7 @@
      float currLat;
      float currLog;
     BOOL isbacktomain;
+    BOOL alertdiss;
 
 }
 typedef NS_ENUM (NSInteger, NumberOfTemplete) {
