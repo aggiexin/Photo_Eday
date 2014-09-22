@@ -161,27 +161,27 @@
                                             mediaType:SSPublishContentMediaTypeText];
     
 
-    
-    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
-                                                         allowCallback:YES
-                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
-                                                          viewDelegate:nil
-                                               authManagerViewDelegate:nil];
-    
-    //在授权页面中添加关注官方微博
-    [authOptions setFollowAccounts:[NSDictionary dictionaryWithObjectsAndKeys:
-                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
-                                    SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
-                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
-                                    SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
-                                    nil]];
+//    
+//    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
+//                                                         allowCallback:YES
+//                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
+//                                                          viewDelegate:nil
+//                                               authManagerViewDelegate:nil];
+//    
+//    //在授权页面中添加关注官方微博
+//    [authOptions setFollowAccounts:[NSDictionary dictionaryWithObjectsAndKeys:
+//                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
+//                                    SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
+//                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
+//                                    SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
+//                                    nil]];
     
     //显示分享菜单
     [ShareSDK showShareViewWithType:ShareTypeSinaWeibo
                           container:nil
                             content:publishContent
                       statusBarTips:YES
-                        authOptions:authOptions
+                        authOptions:nil
                        shareOptions:[ShareSDK defaultShareOptionsWithTitle:nil
                                                            oneKeyShareList:[NSArray defaultOneKeyShareList]
                                                             qqButtonHidden:NO

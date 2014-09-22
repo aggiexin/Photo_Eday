@@ -11,7 +11,7 @@
 #import "Reachability.h"
 @implementation Internet
 +(NSInteger)ChickInternet{
-    [SVProgressHUD showWithStatus:@"真在检查网络请稍后..."];
+    [SVProgressHUD showWithStatus:@"正在检查网络请稍后..."];
     Reachability *r = [Reachability reachabilityWithHostName:@"www.baidu.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:

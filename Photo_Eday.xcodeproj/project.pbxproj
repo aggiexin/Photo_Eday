@@ -246,6 +246,18 @@
 		45CD1FE019A5CBEA0040E25E /* 8-5.位置icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CD1FCA19A5CBEA0040E25E /* 8-5.位置icon.png */; };
 		45CD1FE219A5EF870040E25E /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CD1FE119A5EF870040E25E /* line.png */; };
 		45CE269019BFF7D600150E9D /* watermark.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CE268F19BFF7D600150E9D /* watermark.png */; };
+		45DC62AD19CBE14700789DF7 /* ShareSDKFlatShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45DC62A119CBE14700789DF7 /* ShareSDKFlatShareViewUI.bundle */; };
+		45DC62AE19CBE14700789DF7 /* ShareSDKFlatShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC62A219CBE14700789DF7 /* ShareSDKFlatShareViewUI.framework */; };
+		45DC62AF19CBE14700789DF7 /* ShareSDKiPadDefaultShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45DC62A319CBE14700789DF7 /* ShareSDKiPadDefaultShareViewUI.bundle */; };
+		45DC62B019CBE14700789DF7 /* ShareSDKiPadDefaultShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC62A419CBE14700789DF7 /* ShareSDKiPadDefaultShareViewUI.framework */; };
+		45DC62B119CBE14700789DF7 /* ShareSDKiPadSimpleShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45DC62A519CBE14700789DF7 /* ShareSDKiPadSimpleShareViewUI.bundle */; };
+		45DC62B219CBE14700789DF7 /* ShareSDKiPadSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC62A619CBE14700789DF7 /* ShareSDKiPadSimpleShareViewUI.framework */; };
+		45DC62B319CBE14700789DF7 /* ShareSDKiPhoneAppRecommendShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC62A719CBE14700789DF7 /* ShareSDKiPhoneAppRecommendShareViewUI.framework */; };
+		45DC62B419CBE14700789DF7 /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45DC62A819CBE14700789DF7 /* ShareSDKiPhoneDefaultShareViewUI.bundle */; };
+		45DC62B519CBE14700789DF7 /* ShareSDKiPhoneDefaultShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC62A919CBE14700789DF7 /* ShareSDKiPhoneDefaultShareViewUI.framework */; };
+		45DC62B619CBE14700789DF7 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45DC62AA19CBE14700789DF7 /* ShareSDKiPhoneSimpleShareViewUI.bundle */; };
+		45DC62B719CBE14700789DF7 /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC62AB19CBE14700789DF7 /* ShareSDKiPhoneSimpleShareViewUI.framework */; };
+		45DC62B819CBE14700789DF7 /* ShareSDKShareActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC62AC19CBE14700789DF7 /* ShareSDKShareActionSheet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -557,6 +569,18 @@
 		45CD1FCA19A5CBEA0040E25E /* 8-5.位置icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8-5.位置icon.png"; sourceTree = "<group>"; };
 		45CD1FE119A5EF870040E25E /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		45CE268F19BFF7D600150E9D /* watermark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = watermark.png; path = ../watermark.png; sourceTree = "<group>"; };
+		45DC62A119CBE14700789DF7 /* ShareSDKFlatShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKFlatShareViewUI.bundle; sourceTree = "<group>"; };
+		45DC62A219CBE14700789DF7 /* ShareSDKFlatShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKFlatShareViewUI.framework; sourceTree = "<group>"; };
+		45DC62A319CBE14700789DF7 /* ShareSDKiPadDefaultShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKiPadDefaultShareViewUI.bundle; sourceTree = "<group>"; };
+		45DC62A419CBE14700789DF7 /* ShareSDKiPadDefaultShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPadDefaultShareViewUI.framework; sourceTree = "<group>"; };
+		45DC62A519CBE14700789DF7 /* ShareSDKiPadSimpleShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKiPadSimpleShareViewUI.bundle; sourceTree = "<group>"; };
+		45DC62A619CBE14700789DF7 /* ShareSDKiPadSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPadSimpleShareViewUI.framework; sourceTree = "<group>"; };
+		45DC62A719CBE14700789DF7 /* ShareSDKiPhoneAppRecommendShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneAppRecommendShareViewUI.framework; sourceTree = "<group>"; };
+		45DC62A819CBE14700789DF7 /* ShareSDKiPhoneDefaultShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKiPhoneDefaultShareViewUI.bundle; sourceTree = "<group>"; };
+		45DC62A919CBE14700789DF7 /* ShareSDKiPhoneDefaultShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneDefaultShareViewUI.framework; sourceTree = "<group>"; };
+		45DC62AA19CBE14700789DF7 /* ShareSDKiPhoneSimpleShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKiPhoneSimpleShareViewUI.bundle; sourceTree = "<group>"; };
+		45DC62AB19CBE14700789DF7 /* ShareSDKiPhoneSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneSimpleShareViewUI.framework; sourceTree = "<group>"; };
+		45DC62AC19CBE14700789DF7 /* ShareSDKShareActionSheet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKShareActionSheet.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -565,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45BB584C19CABA1800A5B346 /* libTCWeiboSDK.a in Frameworks */,
+				45DC62B019CBE14700789DF7 /* ShareSDKiPadDefaultShareViewUI.framework in Frameworks */,
 				459E76A819C9BB1900297F3A /* libUMFeedback.a in Frameworks */,
 				45BB584419CABA1800A5B346 /* WeChatConnection.framework in Frameworks */,
 				455A99A1197F93C500F8B040 /* SystemConfiguration.framework in Frameworks */,
@@ -575,6 +600,7 @@
 				45BB584E19CABA1800A5B346 /* ShareSDK.framework in Frameworks */,
 				45BB584D19CABA1800A5B346 /* libWeChatSDK.a in Frameworks */,
 				455A99AF197F941200F8B040 /* libsqlite3.dylib in Frameworks */,
+				45DC62B219CBE14700789DF7 /* ShareSDKiPadSimpleShareViewUI.framework in Frameworks */,
 				451489F51987949400B0568D /* libiconv.dylib in Frameworks */,
 				455A99AB197F93F500F8B040 /* Security.framework in Frameworks */,
 				4598C55819ADD6FE00546F2B /* AssetsLibrary.framework in Frameworks */,
@@ -583,14 +609,19 @@
 				45BB584819CABA1800A5B346 /* ShareSDKCoreService.framework in Frameworks */,
 				451489F7198794CA00B0568D /* libz.dylib in Frameworks */,
 				45BB584A19CABA1800A5B346 /* libSinaWeiboSDK.a in Frameworks */,
+				45DC62B819CBE14700789DF7 /* ShareSDKShareActionSheet.framework in Frameworks */,
 				455A99AD197F940800F8B040 /* libstdc++.dylib in Frameworks */,
 				455A99A5197F93D400F8B040 /* CoreTelephony.framework in Frameworks */,
+				45DC62AE19CBE14700789DF7 /* ShareSDKFlatShareViewUI.framework in Frameworks */,
 				455A99B1197F941C00F8B040 /* MessageUI.framework in Frameworks */,
 				455A99A9197F93EB00F8B040 /* libz.1.2.5.dylib in Frameworks */,
 				45BB584219CABA1800A5B346 /* SinaWeiboConnection.framework in Frameworks */,
+				45DC62B719CBE14700789DF7 /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */,
+				45DC62B519CBE14700789DF7 /* ShareSDKiPhoneDefaultShareViewUI.framework in Frameworks */,
 				455A99A7197F93E000F8B040 /* libicucore.dylib in Frameworks */,
 				455A99A3197F93CC00F8B040 /* QuartzCore.framework in Frameworks */,
 				45316040197E3DB700FD148F /* CoreData.framework in Frameworks */,
+				45DC62B319CBE14700789DF7 /* ShareSDKiPhoneAppRecommendShareViewUI.framework in Frameworks */,
 				45315FC1197E3CDD00FD148F /* UIKit.framework in Frameworks */,
 				45315FBD197E3CDD00FD148F /* Foundation.framework in Frameworks */,
 			);
@@ -1025,6 +1056,7 @@
 		45BB582819CABA1800A5B346 /* ShareSDK */ = {
 			isa = PBXGroup;
 			children = (
+				45DC62A019CBE14700789DF7 /* UI */,
 				45BB582919CABA1800A5B346 /* Connection */,
 				45BB582D19CABA1800A5B346 /* Core */,
 				45BB583519CABA1800A5B346 /* Extend */,
@@ -1166,6 +1198,26 @@
 				45BB57F919CAA59200A5B346 /* 4.png */,
 			);
 			name = TemPlate;
+			sourceTree = "<group>";
+		};
+		45DC62A019CBE14700789DF7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				45DC62A119CBE14700789DF7 /* ShareSDKFlatShareViewUI.bundle */,
+				45DC62A219CBE14700789DF7 /* ShareSDKFlatShareViewUI.framework */,
+				45DC62A319CBE14700789DF7 /* ShareSDKiPadDefaultShareViewUI.bundle */,
+				45DC62A419CBE14700789DF7 /* ShareSDKiPadDefaultShareViewUI.framework */,
+				45DC62A519CBE14700789DF7 /* ShareSDKiPadSimpleShareViewUI.bundle */,
+				45DC62A619CBE14700789DF7 /* ShareSDKiPadSimpleShareViewUI.framework */,
+				45DC62A719CBE14700789DF7 /* ShareSDKiPhoneAppRecommendShareViewUI.framework */,
+				45DC62A819CBE14700789DF7 /* ShareSDKiPhoneDefaultShareViewUI.bundle */,
+				45DC62A919CBE14700789DF7 /* ShareSDKiPhoneDefaultShareViewUI.framework */,
+				45DC62AA19CBE14700789DF7 /* ShareSDKiPhoneSimpleShareViewUI.bundle */,
+				45DC62AB19CBE14700789DF7 /* ShareSDKiPhoneSimpleShareViewUI.framework */,
+				45DC62AC19CBE14700789DF7 /* ShareSDKShareActionSheet.framework */,
+			);
+			name = UI;
+			path = Connection/UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1321,6 +1373,7 @@
 				4534B4ED19A848B7009974A9 /* gender2age4smile1glass2.png in Resources */,
 				459E738319C98C6000297F3A /* telementsixbk.png in Resources */,
 				4598C5EC19B70C9E00546F2B /* start480x2.png in Resources */,
+				45DC62B619CBE14700789DF7 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
 				450DDD671982602F00BF57F1 /* QQ-2.png in Resources */,
 				45CD1FDE19A5CBEA0040E25E /* 8-3.阴天.png in Resources */,
 				45CD1FCB19A5CBEA0040E25E /* 1.心.png in Resources */,
@@ -1360,6 +1413,7 @@
 				4534B4DE19A8473D009974A9 /* gender2age3smile1glass1.png in Resources */,
 				4534B4C719A844A4009974A9 /* gender2age1smile3glass2.png in Resources */,
 				45BB57EA19CAA1A300A5B346 /* yinhao1.png in Resources */,
+				45DC62B119CBE14700789DF7 /* ShareSDKiPadSimpleShareViewUI.bundle in Resources */,
 				4598C5D619B6FCB500546F2B /* logo58.png in Resources */,
 				4534B4F919A848FF009974A9 /* gender1age2smile1glass2.png in Resources */,
 				45CD1FD819A5CBEA0040E25E /* 7.多云.png in Resources */,
@@ -1368,8 +1422,10 @@
 				4534B4E219A8473D009974A9 /* gender2age3smile2glass2.png in Resources */,
 				4598C5A019B59E7D00546F2B /* snow1.png in Resources */,
 				4598C5A119B59E7D00546F2B /* snow2.png in Resources */,
+				45DC62B419CBE14700789DF7 /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
 				4534B4F119A848B7009974A9 /* gender2age4smile3glass2.png in Resources */,
 				459E76B019C9BB1900297F3A /* UMContactViewController.xib in Resources */,
+				45DC62AD19CBE14700789DF7 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				450DDD4A19823A1800BF57F1 /* binggo.png in Resources */,
 				45CD1FD319A5CBEA0040E25E /* iconwhite.png in Resources */,
 				45CD1FDA19A5CBEA0040E25E /* hat.png in Resources */,
@@ -1393,6 +1449,7 @@
 				4598C57419B077D600546F2B /* city.txt in Resources */,
 				45CD1FD019A5CBEA0040E25E /* happy.png in Resources */,
 				4598C5DE19B6FD2200546F2B /* logo60.png in Resources */,
+				45DC62AF19CBE14700789DF7 /* ShareSDKiPadDefaultShareViewUI.bundle in Resources */,
 				450DDD651982602F00BF57F1 /* sinaWB.png in Resources */,
 				4598C5E819B70C9100546F2B /* start568.png in Resources */,
 				450DDD631982602F00BF57F1 /* tcWB.png in Resources */,
@@ -1619,6 +1676,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(PROJECT_DIR)/Photo_Eday/ShareSDK/Connection",
 					"$(PROJECT_DIR)/Photo_Eday/ShareSDK/Core",
+					"$(PROJECT_DIR)/Photo_Eday/ShareSDK/Connection/UI",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Photo_Eday/Photo_Eday-Prefix.pch";
@@ -1657,6 +1715,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(PROJECT_DIR)/Photo_Eday/ShareSDK/Connection",
 					"$(PROJECT_DIR)/Photo_Eday/ShareSDK/Core",
+					"$(PROJECT_DIR)/Photo_Eday/ShareSDK/Connection/UI",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Photo_Eday/Photo_Eday-Prefix.pch";

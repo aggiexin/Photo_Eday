@@ -2,28 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>FZLTZCHK.TTF</string>
-		<string>方正兰亭中黑_GBK</string>
-		<string>腾祥嘉丽超细圆简.ttf</string>
-		<string>汉仪娃娃篆简.ttf</string>
-		<string>segoe script.ttf</string>
-		<string>方正兰亭准黑_GBK.TTF</string>
-		<string>方正兰亭细黑_GBK.TTF</string>
-	</array>
-	<key>CFBundleGetInfoString</key>
-	<string></string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
-	<key>SBUsesNetwork</key>
-	<integer>3</integer>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>${PRODUCT_NAME:rfc1034identifier}photo.edaysoft.cn</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -46,9 +32,8 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>QQ41AE9566</string>
-				<string>wb3333798819</string>
 				<string>wx32a52a5c2222b080</string>
-				<string>wb801529182</string>
+				<string>wb80152918</string>
 			</array>
 		</dict>
 		<dict>
@@ -71,11 +56,33 @@
 				<string>tencent1101960550content</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb3333798819</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>SBUsesNetwork</key>
+	<integer>3</integer>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FZLTZCHK.TTF</string>
+		<string>方正兰亭中黑_GBK</string>
+		<string>腾祥嘉丽超细圆简.ttf</string>
+		<string>汉仪娃娃篆简.ttf</string>
+		<string>segoe script.ttf</string>
+		<string>方正兰亭准黑_GBK.TTF</string>
+		<string>方正兰亭细黑_GBK.TTF</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

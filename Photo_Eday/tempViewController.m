@@ -56,7 +56,6 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     if (alertdiss==NO) {
-
     NSInteger internetType = [Internet ChickInternet];
     
     if (internetType==0) {
@@ -67,9 +66,6 @@
     }else{
     _imgInfo=  [FaceTool ChickFace:_imageData];
     NSArray *faceArr  = [_imgInfo objectForKey:@"face"];
-    
-    
-    
     if ([faceArr count]==0 && isbacktomain==NO) {
 //        [SVProgressHUD showErrorWithStatus:@"识别失败"];
         [SVProgressHUD dismiss];
@@ -83,17 +79,18 @@
         _desSentence = [FaceTool getDescriptionSentence:_imgInfo];
         _desTitle = [FaceTool getDescriptionTitle:_imgInfo];
         _creattime = [NSDate date];
-        _city = @"上海";
-        [self TemplateOne];
+//        _city = @"上海";
         [self getcity];
-        [SVProgressHUD showSuccessWithStatus:@"识别成功"];
-     
+//        [SVProgressHUD showSuccessWithStatus:@"识别成功"];
+//        
+//        [self TemplateThree];
 
         }
     }
-    self.view.userInteractionEnabled = YES;
     }
-    [SVProgressHUD dismiss];
+
+//    [SVProgressHUD dismiss];
+    self.view.userInteractionEnabled = YES;
 
 }
 
@@ -111,6 +108,8 @@
 
     
     [NSURLConnection sendAsynchronousRequest:request queue:self.myQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//        [SVProgressHUD showWithStatus:@"人脸识别中请稍后..."];
+
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         
         NSDictionary *weatherinfo = [dict objectForKey:@"weatherinfo"];
@@ -159,9 +158,12 @@
             _weatherimage = [UIImage imageNamed:@"deadagain.png"];
         }
         
-//        [SVProgressHUD showSuccessWithStatus:@"识别成功"];
+        
         _buttomBackGround.userInteractionEnabled = YES;
         _weatherstring = weatherfk;
+        [SVProgressHUD showSuccessWithStatus:@"识别成功"];
+        [self TemplateOne];
+
 }];
     
 
@@ -198,9 +200,6 @@
 
     chickTemplateOpen = NO;
     ischanged = NO;
-    
-    
-
     [super viewDidLoad];
 
     
@@ -1170,33 +1169,32 @@
 
     switch (sender.tag) {
         case 1:
-            
             [self TemplateOne];
-            [self reloadInputViews];
+//            [self reloadInputViews];
             break;
         case 2:
             [self TemplateTwo];
-            [self reloadInputViews];
+//            [self reloadInputViews];
             break;
         case 3:
             [self TemplateThree];
-            [self reloadInputViews];
+//            [self reloadInputViews];
             break;
         case 4:
             [self TemplateFour];
-            [self reloadInputViews];
+//            [self reloadInputViews];
             break;
         case 5:
             [self TemplateFive];
-            [self reloadInputViews];
+//            [self reloadInputViews];
             break;
         case 6:
             [self TemplateSix];
-            [self reloadInputViews];
+//            [self reloadInputViews];
             break;
         case 7:
             [self TemplateSeven];
-            [self reloadInputViews];
+//            [self reloadInputViews];
             break;
 
         default:
@@ -1226,21 +1224,20 @@
 }
 -(void)getcity{
     CLLocation *loc = [[CLLocation alloc]initWithLatitude:currLat longitude:currLog];
-    
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:loc completionHandler:^(NSArray *array, NSError *error) {
-        
+//        [SVProgressHUD showWithStatus:@"人脸识别中请稍后..."];
+
         if (array.count > 0) {
             CLPlacemark *placemark = [array objectAtIndex:0];
             _city = placemark.administrativeArea;
             NSRange range = NSMakeRange(0, placemark.administrativeArea.length-1);
             NSString *city = [placemark.administrativeArea substringWithRange:range];
             _city = city;
+            _weatherimage = [UIImage imageNamed:@"cloud.png"];
             [self getweather:city];
+//            [self TemplateThree];
 //            [SVProgressHUD showSuccessWithStatus:@"识别成功"];
-            
-           
-
         }
     }];
     

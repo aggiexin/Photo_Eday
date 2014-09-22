@@ -47,14 +47,14 @@
 //    //……
     
     //添加新浪微博应用 注册网址 http://open.weibo.com
-        [ShareSDK connectSinaWeiboWithAppKey:@"3201194191"
-                                  appSecret:@"fd42545985a090707503f5902b94d8d7"
+        [ShareSDK connectSinaWeiboWithAppKey:@"3333798819"
+                                  appSecret:@"bcc1be163e904954834711b545232b56"
                                  redirectUri:@"https://api.weibo.com/oauth2/default.html"];
 
     
     //当使用新浪微博客户端分享的时候需要按照下面的方法来初始化新浪的平台
     [ShareSDK  connectSinaWeiboWithAppKey:@"3333798819"
-                                appSecret:@"fd42545985a090707503f5902b94d8d7"
+                                appSecret:@"bcc1be163e904954834711b545232b56"
                               redirectUri:@"https://api.weibo.com/oauth2/default.html"
                               weiboSDKCls:[WeiboSDK class]];
 
@@ -138,7 +138,8 @@
 //    return [WXApi handleOpenURL:url delegate:self];
 //    return [WeiboSDK handleOpenURL:url delegate:self];
 //    return [TencentOAuth HandleOpenURL:url];
-    return YES;
+//    return [ShareSDK handleOpenURL:url wxDelegate:self];
+    return [ShareSDK handleOpenURL:url sourceApplication:sourceApplication annotation:annotation wxDelegate:self];
 //    return [TencentOAuth HandleOpenURL:url];
     
 }
